@@ -1,0 +1,12 @@
+- name: Balancing
+  vars:
+  tasks:
+
+  - name: Install Nginx
+    include_playbook: install_nginx.yml
+
+  - name: Install DB
+    include_playbook: install_db.yml
+
+  - name: Install Wordpress
+    include_playbook: install_wordpress.yml

@@ -1,0 +1,52 @@
+---
+- name: Install Wordpress
+  become: true
+  become_method: sudo
+  become_user: root
+  hosts: web
+  tasks:
+
+  - name: Disable SELinux
+    shell: setenforce 0
+
+  - name: Disable SELinux in Config
+    lineinfile:
+      path: "/etc/selinux/config"
+      regexp: '^SELINUX='
+      line: SELINUX=disabled;
+      owner: root
+      group: root
+      mode: u=rw,g=r,o=r
+
+  - name: install packages
+    dnf:
+      name:
+        - httpd
+        - php 
+        - php-mysqlnd 
+        - php-pdo 
+        - php-gd 
+        - php-mbstring
+      state: latest
+
+  - name: get Wordpress
+    shell: |
+      wget https://wordpress.org/latest.tar.gz
+      tar -xzf wordpress-6.6.1.tar.gz
+      rsync -av wordpress/* /var/www/html
+      chown -R apache:apache /var/www/html/*
+    args:
+      chdir: /home/{{ ansible_user }}/
+      executable: /bin/bash 
+
+  - name: copy config
+    src: ./wp-config.php.j2
+    dest: /var/www/html/wp-config.php
+    owner: apache
+    group: apache
+    mode: '0644'
+
+  - name: restart httpd.service
+    service:
+      name: httpd
+      state: restarted
