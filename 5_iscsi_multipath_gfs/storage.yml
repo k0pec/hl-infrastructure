@@ -1,0 +1,33 @@
+- hosts: target
+  remote_user: ansible
+  become: true
+  vars:
+    storage_partitions:
+      - name: /dev/sdb
+        number: 1
+        flags:
+          - lvm
+        part_end: 100%
+    storage_volumegroups:
+      - name: vg_iscsi
+        devices:
+          - /dev/sdb1
+    storage_volumes:
+      - name: vg_iscsi_lv_node1
+        vg: vg_iscsi
+        size: 10000
+    storage_filesystems:
+      - name: /dev/vg_local/vg_local_lv_data
+        filesystem: ext4
+    storage_mounts:
+      - name: /data
+        src: /dev/vg_local/vg_local_lv_data
+        owner: root
+        group: root
+        mode: "0755"
+        opts: defaults
+        boot: yes
+        dump: 0
+        passno: 2
+  roles:
+    - ansible-role-storage

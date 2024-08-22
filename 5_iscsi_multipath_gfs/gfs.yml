@@ -1,0 +1,29 @@
+- hosts: 
+  - host1
+  - host2
+  pre_tasks:
+    - name: Mount target
+      community.general.open_iscsi:
+      login: false
+      target: iqn.2024-08.ru.yacloud:target-host
+  roles:
+    - role: gfs2-role
+      vars:
+        gfs2_cluster_name: MyCluster
+        gfs2_resource_name_lvmlockd: lvm_locking
+        gfs2_resource_name_dlm: dlm_control
+        gfs2_group_name_locking: locking
+        gfs2_file_systems:
+          - name: fs1
+            resource_name_fs: gfs2-1
+            pvs:
+              - /dev/vg_iscsi/vg_iscsi_lv_node1
+            vg: vg_gfs2_1
+            lv: lv_gfs2_1
+            lv_size: 10G
+            resource_name_lv: shared-lv-1
+            journals: 2
+            mount_point: /mnt/test1
+            mount_options:
+              - noatime
+            state: enabled

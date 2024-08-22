@@ -1,0 +1,21 @@
+- hosts: target
+  become: true
+  gather_facts: true
+  vars:
+    iscsi_targets:
+      - name: "iqn.2024-08.ru.yacloud:target-host"
+        disks:
+          - name: lun_node1
+            path: /dev/vg_iscsi/vg_iscsi_lv_node1
+            type: block
+            lunid: 0
+        initiators:
+          - name: iqn.2024-08.ru.yacloud:node1
+            mapped_luns:
+              - mapped_lunid: 0
+                lunid: 0
+        portals:
+          - ip: "{{ ansible_default_ipv4.address | default(ansible_all_ipv4_addresses[0]) }}"
+
+  roles:
+    - ansible-role-iscsi_target

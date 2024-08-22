@@ -1,0 +1,11 @@
+---
+- name: Cloud Action
+  tasks:
+  - name: Create Storage
+    include_playbook: storage.yml
+
+  - name: Create target
+    include_playbook: iscsi.yml
+
+  - name: Create GFS Cluster
+    include_playbook: gfs.yml
