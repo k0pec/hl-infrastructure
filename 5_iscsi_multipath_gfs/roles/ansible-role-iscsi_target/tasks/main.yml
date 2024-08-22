@@ -1,0 +1,17 @@
+---
+
+- name: Install targetcli packages
+  package:
+    name: "{{ iscsi_packages }}"
+    state: present
+
+- include_tasks: configure-target.yml
+  with_items:
+    - "{{ iscsi_targets }}"
+  loop_control:
+    loop_var: "target"
+
+- name: Ensure targetcli configuration is loaded at boot
+  service:
+    name: rtslib-fb-targetctl
+    enabled: true

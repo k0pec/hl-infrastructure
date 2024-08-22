@@ -1,0 +1,12 @@
+---
+
+- name: test storage_filesystems
+  ansible.builtin.assert:
+    that:
+      - filesystem.name is defined
+    quiet: true
+
+- name: create filesystems
+  filesystem:
+    dev: "{{ filesystem.name }}"
+    fstype: "{{ filesystem.fstype | default(storage_default_fstype) }}"
