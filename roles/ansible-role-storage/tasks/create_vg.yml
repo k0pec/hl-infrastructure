@@ -1,0 +1,14 @@
+---
+
+- name: test volumegroup
+  assert:
+    that:
+      - volumegroup.name is defined
+      - volumegroup.devices is defined
+    quiet: true
+
+- name: create volume groups
+  lvg:
+    vg: "{{ volumegroup.name }}"
+    pvs: "{{ volumegroup.devices | join(',') }}"
+    pesize: "{{ volumegroup.size | default(omit) }}"
