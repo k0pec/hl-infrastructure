@@ -1,0 +1,28 @@
+global_defs {
+    enable_script_security
+}
+
+vrrp_script backend_check {
+    script "/usr/bin/curl http://{{ backend_ip }}"
+    interval 5
+    user nginx
+}
+
+vrrp_instance web {
+    state BACKUP
+    interface eth0
+    virtual_router_id 254
+    priority 50
+    advert_int 2
+    preempt_delay 30
+    authentication {
+        auth_type PASS
+        auth_pass 12345678
+    }
+    virtual_ipaddress {
+        {{ virtual_ip }}
+    }
+    track_script {
+        backend_check
+    }
+}

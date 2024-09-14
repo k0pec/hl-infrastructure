@@ -1,0 +1,33 @@
+---
+- name: Install MariaDB
+  become: true
+  become_method: sudo
+  become_user: root
+  hosts: db 
+  tasks:
+  - name: install packages
+    dnf:
+      name:
+        - docker-ce 
+        - docker-ce-cli
+        - docker-compose
+      state: latest
+    
+  - name: start docker.service
+    service:
+      name: docker
+      state: started
+      enabled: yes
+
+  - name: copy docker-compose.yml
+    src: ./docker-compose.yml.j2
+    dest: /home/{{ ansible_user }}/docker-compose.yml
+    owner: root
+    group: root
+    mode: '0644'
+
+  - name: start DB 
+    shell: docker-compose up
+    args:
+      chdir: /home/{{ ansible_user }}/
+      executable: /bin/bash

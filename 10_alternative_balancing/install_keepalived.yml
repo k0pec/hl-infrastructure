@@ -1,0 +1,23 @@
+---
+- name: Install keepalived
+  hosts: nginx
+  become: true
+  become_method: sudo
+  become_user: root
+  tasks:
+  - name: install pakages
+    dnf:
+      name: keepalived
+      state: latest
+
+  - name: copy config
+    src: ./keepalived.conf.j2
+    dest: /etc/keepalived/keepalived.conf
+    owner: root
+    group: root
+    mode: '0644'
+
+  - name: restart keepalived.service
+    service:
+      name: keepalived
+      state: restarted

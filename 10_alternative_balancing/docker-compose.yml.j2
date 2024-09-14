@@ -1,0 +1,15 @@
+version: "3"
+services:
+  mariadb:
+    image: mariadb
+    hostname: web_db
+    container_name: web_db
+    restart: always
+    environment:
+      TZ: "Europe/Moscow"
+      MARIADB_DATABASE: {{ db_name }}
+      MARIADB_USER: {{ db_user }}
+      MARIADB_PASSWORD: {{ db_pass }}
+      MARIADB_ROOT_PASSWORD: {{ db_pass }}
+    ports:
+      - 3306:3306
