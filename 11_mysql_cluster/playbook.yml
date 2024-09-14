@@ -1,0 +1,11 @@
+- name: MySQL Cluster
+  tasks:
+
+  - name: Install DB
+    include_playbook: install_db.yml
+
+  - name: Install Percona Cluster
+    include_playbook: percona_mysql_cluster.yml
+
+  - name: Install Wordpress
+    include_playbook: install_wordpress.yml

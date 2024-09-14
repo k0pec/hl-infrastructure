@@ -1,0 +1,6 @@
+---
+- hosts: db
+  any_errors_fatal: true
+  become: True
+  roles:
+    - percona_xtradb_cluster

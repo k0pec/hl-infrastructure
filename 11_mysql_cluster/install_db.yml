@@ -1,0 +1,11 @@
+---
+- name: Install MySQL
+  hosts: db
+  become: true
+  become_method: sudo
+  become_user: root
+  tasks:
+  - name: install pakages
+    dnf:
+      name: mysql-server
+      state: latest
