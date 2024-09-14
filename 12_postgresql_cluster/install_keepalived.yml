@@ -1,0 +1,23 @@
+---
+- name: Install Keepalived
+  hosts: proxy 
+  become: true
+  become_method: sudo
+  become_user: root
+  tasks:
+  - name: Install keepalived
+    yum: 
+      name: keepalived 
+      state: latest
+    
+  - name: put config
+    template: 
+      src: keepalived.conf.j2
+      dest: /etc/keepalived/keepalived.conf
+      backup: yes
+
+  - name: restart and enable
+    service: 
+      name: keepalived
+      state: restarted 
+      enabled: yes

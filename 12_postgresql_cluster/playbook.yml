@@ -1,0 +1,14 @@
+- name: PostgreSQL Cluster
+  tasks:
+
+  - name: Install PostgreSQL
+    include_playbook: install_postgresql.yml
+
+  - name: Install Patroni Cluster
+    include_playbook: install_patroni.yml
+
+  - name: Install HA Proxy
+    include_playbook: install_haproxy.yml
+
+  - name: Install keepalived
+    include_playbook: install_keepalived.yml

@@ -1,0 +1,16 @@
+---
+- name: Install PostgreSQL
+  hosts: db
+  become: true
+  become_method: sudo
+  become_user: root
+  tasks:
+  - name: Import Repo
+    yum: 
+      name: https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+      state: present
+
+  - name: install pakages
+    yum:
+      name: postgresql14-server.x86_64
+      state: latest
