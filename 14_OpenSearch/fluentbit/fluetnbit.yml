@@ -1,0 +1,34 @@
+fluentbit_inputs:
+  - name: 'tail'
+    path:             '/var/log/nginx/*.log'
+    parser:           'my_log'
+    refresh_Interval: '5'
+    tag:              'my_log'
+    alias:            'my_log'
+
+fluentbit_outputs:
+  - name: 'opensearch'
+    alias: 'my_log'
+    match: 'my_log'
+    host:  'localhost:443'
+    port:  '443'
+    retry_limit: 'off'
+    replace_dots: 'on'
+    tls: 'on'
+    suppress_type_name: 'on'
+    logstash_format: 'on'
+    # index naming - my_log-2023.09.12 ...
+    logstash_prefix: 'my_log'
+
+fluentbit_custom_parsers:
+  - name: 'my_log'
+    format: 'json'
+    time_key: 'timestamp'
+    time_format: '%Y-%m-%dT%H:%M:%S.%L%z'
+
+# Playbook
+tasks:
+    - name: fluent-bit
+      hosts: all
+      roles:
+        - role: fluentbit
