@@ -1,0 +1,17 @@
+- hosts: all
+  become: true
+  become_method: sudo
+  serial: 1
+  roles:
+    - kafka
+  vars:
+    - kafka_security_inter_broker_protocol: SSL
+    - kafka_ssl_enabled: false
+    # - kafka_ssl_endpoint_identification_algorithm: HTTPS
+    # - kafka_ssl_client_auth: required
+    # - kafka_ssl_keystore_location: '/keys'
+    # - kafka_ssl_keystore_password: 'passwd1'
+    # - kafka_ssl_key_password: 'passwd2'
+    # - kafka_ssl_truststore_location: '/files'
+    # - kafka_ssl_truststore_password: 'passwd3'
+    # - kafka_listeners: 'SSL://{{inventory_hostname}}:9093'

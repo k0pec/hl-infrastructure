@@ -1,0 +1,26 @@
+#requirements.yml
+---
+
+- src: https://github.com/samitpatel/ansible-kafka.git
+  name: kafka
+
+#/bin/bash
+> ansible-galaxy install -r requirements.yml
+
+#playbook.yml
+---
+- hosts: all
+  become: true
+  become_method: sudo
+  serial: 1
+  roles:
+    - kafka
+
+#/bin/bash
+> ansible-playbook -i inventory playbook.yml --tags deploy
+
+Available tags:
+deploy - Install, configures and starts kafka broker
+restart - Restarts kafka broker
+configure - Configures kafka broker
+stop - Stops kafka broker

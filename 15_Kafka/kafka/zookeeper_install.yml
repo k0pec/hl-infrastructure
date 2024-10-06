@@ -1,0 +1,16 @@
+- hosts: all
+  become: true
+  become_method: sudo
+  serial: 1
+  roles:
+    - zookeeper
+  vars:
+    # SASL Authentication
+    - zookeeper_sasl_enable: true
+    - zookeeper_auth_provider_1: 'org.apache.zookeeper.server.auth.SASLAuthenticationProvider'
+    - zookeeper_require_client_auth_scheme: 'sasl'
+    - zookeeper_jaas_login_renew: '3600000'
+    - zookeeper_admin_password: 'admin-secret'
+    - zookeeper_users:
+      - foo: 'boo'
+    - zookeeper_jvm_flags: "-Djava.security.auth.login.config={{zookeeper_conf_dir}}/zookeeper_server_jaas.conf"

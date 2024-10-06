@@ -1,0 +1,25 @@
+#requirements.yml
+---
+- src: https://github.com/samitpatel/ansible-zookeeper.git
+  name: zookeeper
+
+#/bin/bash
+> ansible-galaxy install -r requirements.yml
+
+#playbook.yml
+---
+- hosts: all
+  become: true
+  become_method: sudo
+  serial: 1
+  roles:
+    - zookeeper
+
+#/bin/bash
+> ansible-playbook -i inventory playbook.yml --tags deploy
+
+Available tags:
+deploy - Install, configures and starts zookeeper
+restart - Restarts zookeeper service
+configure - Configures zookeeper
+stop - Stops zookeeper service

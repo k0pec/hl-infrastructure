@@ -1,0 +1,12 @@
+Server {
+  org.apache.zookeeper.server.auth.DigestLoginModule required
+
+  // User definitions
+  user_admin="{{zookeeper_admin_password}}"
+  {%- for user in zookeeper_users -%}
+    {%- for username, password in user.items() %}
+
+  user_{{username}}="{{password}}"
+    {%- endfor -%}
+  {%- endfor -%};
+};

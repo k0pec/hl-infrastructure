@@ -1,0 +1,33 @@
+fluentbit_inputs:
+  - name: 'kafka'
+    match: "*"
+    brokers: 192.168.1.3:9092
+    topics: test
+    pool_ms: 100
+    
+fluentbit_outputs:
+  - name: 'opensearch'
+    alias: 'my_log'
+    match: 'my_log'
+    host:  'localhost:443'
+    port:  '443'
+    retry_limit: 'off'
+    replace_dots: 'on'
+    tls: 'on'
+    suppress_type_name: 'on'
+    logstash_format: 'on'
+    # index naming - my_log-2023.09.12 ...
+    logstash_prefix: 'my_log'
+
+# fluentbit_custom_parsers:
+#   - name: 'my_log'
+#     format: 'json'
+#     time_key: 'timestamp'
+#     time_format: '%Y-%m-%dT%H:%M:%S.%L%z'
+
+# Playbook
+tasks:
+    - name: fluent-bit
+      hosts: fluentbit2
+      roles:
+        - role: fluentbit

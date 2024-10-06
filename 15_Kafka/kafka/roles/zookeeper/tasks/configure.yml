@@ -1,0 +1,31 @@
+---
+- name: create conf dir
+  file: path={{zookeeper_conf_dir}} state=directory owner={{zookeeper_user}} group={{zookeeper_group}} mode=755
+
+- name: setup zoo.cfg
+  template: src=zoo.cfg.j2 dest={{zookeeper_conf_dir}}/zoo.cfg
+
+- name: setup myid
+  template: src=myid.j2 dest={{zookeeper_conf_dir}}/myid
+
+- name: setup environment
+  template: src=java.env.j2 dest={{zookeeper_conf_dir}}/java.env
+
+- name: create log dir
+  file: path={{zookeeper_log_dir}} state=directory owner={{zookeeper_user}} group={{zookeeper_group}} mode=755
+
+- name: create data dir
+  file: path={{zookeeper_data_dir}} state=directory owner={{zookeeper_user}} group={{zookeeper_group}} mode=755
+
+- name: upload log4j properties
+  copy: src=log4j.properties dest={{zookeeper_conf_dir}}/log4j.properties owner={{zookeeper_user}} group={{zookeeper_group}} mode=644
+
+- name: copy logrotate config
+  template: dest=/etc/logrotate.d/zookeeper owner=root group=root mode=644 src=logrotate.conf.j2
+
+# SASL Setup
+- name: Copy SASL config file
+  template: src=zookeeper_server_jaas.conf.j2 dest={{zookeeper_conf_dir}}/zookeeper_server_jaas.conf owner={{zookeeper_user}} group={{zookeeper_group}} mode=640
+  when: zookeeper_sasl_enable
+
+- meta: flush_handlers

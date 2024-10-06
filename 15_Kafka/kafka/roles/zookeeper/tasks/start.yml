@@ -1,0 +1,7 @@
+---
+- name: enable and start zookeeper
+  service: name=zookeeper-server state=started enabled=yes
+
+- name: wait for zookeeper port
+  wait_for: port={{zookeeper_client_port}} state=started timeout=30
+  when: verify

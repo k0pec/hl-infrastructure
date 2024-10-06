@@ -1,0 +1,57 @@
+---
+
+## Install Java
+
+- name: java | Accept Oracle license prior JDK installation
+  shell: echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections; echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
+    creates=/usr/lib/jvm/java-8-oracle
+
+- name: java | add repository
+  apt_repository:
+    repo=ppa:webupd8team/java
+    state=present
+
+- name: update repositories cache
+  apt: update_cache=yes
+
+- name: java | Install dependencies
+  apt:
+    pkg=oracle-java8-installer
+    state=present
+
+
+## Install Zookeeper
+
+- name: setup group
+  group: name={{zookeeper_group}} system=yes
+
+- name: setup user
+  user: name={{zookeeper_user}} system=yes group={{zookeeper_group}}
+
+- name: download zookeeper
+  get_url:
+    url={{zookeeper_download_url}}
+    dest={{zookeeper_binary_archive}}
+    owner={{zookeeper_user}}
+    group={{zookeeper_group}}
+
+- name: uncompress the zookeeper tar
+  unarchive:
+    src={{zookeeper_binary_archive}}
+    dest=/opt
+    creates={{zookeeper_binary_dir}}
+    copy=no
+    owner={{zookeeper_user}}
+    group={{zookeeper_group}}
+
+- name: link /opt/zookeeper to the right version
+  file:
+    src={{zookeeper_binary_dir}}
+    path=/opt/zookeeper
+    state=link
+
+- name: install zookeeper init script
+  template: src=zookeeper-server.j2 dest=/etc/init.d/zookeeper-server mode=0755
+
+- name: add zookeeper binaries to PATH
+  copy: src=zookeeper.sh dest=/etc/profile.d/ owner=root group=root mode=644
