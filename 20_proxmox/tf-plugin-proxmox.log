@@ -1,0 +1,2301 @@
+[90mFri, 08 Nov 2024 11:15:22 +0300[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/util.go:159[0m[36m >[0m Enabling the capture of log-library logs as ithe _capturelog flag was detected
+[90mFri, 08 Nov 2024 11:15:22 +0300[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/util.go:192[0m[36m >[0m Logging Started. Root Logger Set to level debug
+[90mFri, 08 Nov 2024 11:15:31 +0300[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/util.go:159[0m[36m >[0m Enabling the capture of log-library logs as ithe _capturelog flag was detected
+[90mFri, 08 Nov 2024 11:15:31 +0300[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/util.go:192[0m[36m >[0m Logging Started. Root Logger Set to level debug
+[90mFri, 08 Nov 2024 11:15:34 +0300[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/util.go:159[0m[36m >[0m Enabling the capture of log-library logs as ithe _capturelog flag was detected
+[90mFri, 08 Nov 2024 11:15:34 +0300[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/util.go:192[0m[36m >[0m Logging Started. Root Logger Set to level debug
+2024/11/08 11:15:34 [DEBUG] setting computed for "unused_disk" from ComputedKeys
+[90mFri, 08 Nov 2024 11:15:34 +0300[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:837[0m[36m >[0m VM creation [36mloggerName=[0mresource_vm_create [36mvmid=[0m
+[90mFri, 08 Nov 2024 11:15:34 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:838[0m[36m >[0m VM creation resource data: '{"additional_wait":5,"agent":1,"args":"","automatic_reboot":true,"balloon":0,"bios":"seabios","boot":"","bootdisk":"scsi0","bridge":"","ci_wait":0,"cicustom":"","cipassword":"","ciuser":"","clone":"kali","clone_wait":10,"cloudinit_cdrom_storage":"","cores":1,"cpu":"host","default_ipv4_address":"","define_connection_info":true,"desc":"","disk":[{"aio":"","backup":true,"cache":"none","discard":"","file":"","format":"","iops":0,"iops_max":0,"iops_max_length":0,"iops_rd":0,"iops_rd_max":0,"iops_rd_max_length":0,"iops_wr":0,"iops_wr_max":0,"iops_wr_max_length":0,"iothread":1,"mbps":0,"mbps_rd":0,"mbps_rd_max":0,"mbps_wr":0,"mbps_wr_max":0,"media":"","replicate":0,"size":"80G","slot":0,"ssd":0,"storage":"local","storage_type":"","type":"scsi","volume":""}],"disk_gb":0,"force_create":false,"force_recreate_on_change_of":"","full_clone":true,"guest_agent_ready_timeout":100,"hagroup":"","hastate":"","hostpci":[],"hotplug":"network,disk,usb","ipconfig0":"","ipconfig1":"","ipconfig10":"","ipconfig11":"","ipconfig12":"","ipconfig13":"","ipconfig14":"","ipconfig15":"","ipconfig2":"","ipconfig3":"","ipconfig4":"","ipconfig5":"","ipconfig6":"","ipconfig7":"","ipconfig8":"","ipconfig9":"","iso":"","kvm":true,"mac":"","machine":"","memory":512,"name":"TERRAFORM-TEST","nameserver":"","network":[{"bridge":"vmbr0","firewall":false,"link_down":false,"macaddr":"","model":"virtio","mtu":0,"queues":0,"rate":0,"tag":-1}],"nic":"","numa":false,"onboot":false,"oncreate":true,"os_network_config":"","os_type":"","pool":"","preprovision":true,"pxe":false,"qemu_os":"","reboot_required":false,"scsihw":"virtio-scsi-pci","searchdomain":"","serial":[],"sockets":1,"ssh_forward_ip":"","ssh_host":"","ssh_port":"","ssh_private_key":"","ssh_user":"","sshkeys":"","startup":"","storage":"","storage_type":"","tablet":true,"tags":"","target_node":"pve1","unused_disk":[],"usb":[],"vcpus":0,"vga":[],"vlan":-1,"vmid":0}' [36mloggerName=[0mresource_vm_create [36mvmid=[0m
+2024/11/08 11:15:34 [DEBUG][QemuVmCreate] checking for duplicate name: TERRAFORM-TEST
+2024/11/08 11:15:34 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/resources?type=vm HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:15:34 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 249
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:15:32 GMT
+Expires: Fri, 08 Nov 2024 08:15:32 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"diskread":0,"type":"qemu","name":"kali","status":"stopped","maxcpu":1,"node":"pve1","disk":0,"mem":0,"diskwrite":0,"template":1,"maxmem":536870912,"maxdisk":86000000000,"netin":0,"vmid":100,"uptime":0,"id":"qemu/100","cpu":0,"netout":0}]}
+2024/11/08 11:15:34 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/nextid HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:15:34 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 14
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:15:32 GMT
+Expires: Fri, 08 Nov 2024 08:15:32 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":"101"}
+2024/11/08 11:15:34 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/resources?type=vm HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:15:34 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 249
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:15:32 GMT
+Expires: Fri, 08 Nov 2024 08:15:32 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"diskread":0,"type":"qemu","name":"kali","status":"stopped","maxcpu":1,"disk":0,"node":"pve1","mem":0,"diskwrite":0,"template":1,"maxmem":536870912,"maxdisk":86000000000,"netin":0,"vmid":100,"uptime":0,"id":"qemu/100","cpu":0,"netout":0}]}
+2024/11/08 11:15:34 [DEBUG][QemuVmCreate] cloning VM
+[90mFri, 08 Nov 2024 11:15:34 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:964[0m[36m >[0m Cloning VM [36mloggerName=[0mresource_vm_create [36mvmid=[0m
+2024/11/08 11:15:34 >>>>>>>>>> REQUEST:
+POST /api2/json/nodes/pve1/qemu/100/clone HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Content-Length: 62
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip
+
+full=1&name=TERRAFORM-TEST&newid=101&storage=local&target=pve1
+2024/11/08 11:15:34 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Connection: close
+Content-Length: 84
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:15:32 GMT
+Expires: Fri, 08 Nov 2024 08:15:32 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":"UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:"}
+2024/11/08 11:15:34 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:15:34 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 248
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:15:32 GMT
+Expires: Fri, 08 Nov 2024 08:15:32 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"pstart":79263,"type":"qmclone","pid":2908,"node":"pve1","id":"100","starttime":1731053732,"status":"running","tokenid":"root_api_token","upid":"UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:","user":"root@pam"}}
+2024/11/08 11:15:36 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:15:36 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 248
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:15:34 GMT
+Expires: Fri, 08 Nov 2024 08:15:34 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"pid":2908,"pstart":79263,"type":"qmclone","status":"running","tokenid":"root_api_token","user":"root@pam","upid":"UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:","node":"pve1","starttime":1731053732,"id":"100"}}
+2024/11/08 11:15:38 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:15:38 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 248
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:15:36 GMT
+Expires: Fri, 08 Nov 2024 08:15:36 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"pid":2908,"pstart":79263,"type":"qmclone","status":"running","tokenid":"root_api_token","user":"root@pam","upid":"UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:","node":"pve1","id":"100","starttime":1731053732}}
+2024/11/08 11:15:40 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:15:40 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 248
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:15:38 GMT
+Expires: Fri, 08 Nov 2024 08:15:38 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"starttime":1731053732,"id":"100","node":"pve1","user":"root@pam","upid":"UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:","tokenid":"root_api_token","status":"running","type":"qmclone","pstart":79263,"pid":2908}}
+2024/11/08 11:15:42 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:15:42 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 248
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:15:40 GMT
+Expires: Fri, 08 Nov 2024 08:15:40 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"id":"100","starttime":1731053732,"node":"pve1","upid":"UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:","user":"root@pam","tokenid":"root_api_token","status":"running","type":"qmclone","pstart":79263,"pid":2908}}
+2024/11/08 11:15:44 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:15:44 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 248
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:15:42 GMT
+Expires: Fri, 08 Nov 2024 08:15:42 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"status":"running","tokenid":"root_api_token","user":"root@pam","upid":"UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:","node":"pve1","starttime":1731053732,"id":"100","pid":2908,"pstart":79263,"type":"qmclone"}}
+2024/11/08 11:15:46 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:15:46 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 248
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:15:44 GMT
+Expires: Fri, 08 Nov 2024 08:15:44 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"tokenid":"root_api_token","user":"root@pam","upid":"UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:","status":"running","starttime":1731053732,"id":"100","node":"pve1","pid":2908,"type":"qmclone","pstart":79263}}
+2024/11/08 11:15:48 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:15:48 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 248
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:15:46 GMT
+Expires: Fri, 08 Nov 2024 08:15:46 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"type":"qmclone","pstart":79263,"pid":2908,"id":"100","starttime":1731053732,"node":"pve1","upid":"UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:","user":"root@pam","tokenid":"root_api_token","status":"running"}}
+2024/11/08 11:15:50 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:15:50 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 248
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:15:48 GMT
+Expires: Fri, 08 Nov 2024 08:15:48 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"pid":2908,"type":"qmclone","pstart":79263,"user":"root@pam","upid":"UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:","tokenid":"root_api_token","status":"running","id":"100","starttime":1731053732,"node":"pve1"}}
+2024/11/08 11:15:52 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:15:52 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 248
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:15:50 GMT
+Expires: Fri, 08 Nov 2024 08:15:50 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"pid":2908,"pstart":79263,"type":"qmclone","status":"running","tokenid":"root_api_token","upid":"UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:","user":"root@pam","node":"pve1","id":"100","starttime":1731053732}}
+2024/11/08 11:15:54 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:15:54 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 248
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:15:52 GMT
+Expires: Fri, 08 Nov 2024 08:15:52 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"pid":2908,"type":"qmclone","pstart":79263,"upid":"UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:","user":"root@pam","tokenid":"root_api_token","status":"running","id":"100","starttime":1731053732,"node":"pve1"}}
+2024/11/08 11:15:56 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:15:56 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 248
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:15:54 GMT
+Expires: Fri, 08 Nov 2024 08:15:54 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"pid":2908,"type":"qmclone","pstart":79263,"tokenid":"root_api_token","upid":"UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:","user":"root@pam","status":"running","id":"100","starttime":1731053732,"node":"pve1"}}
+2024/11/08 11:15:58 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:15:58 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 248
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:15:56 GMT
+Expires: Fri, 08 Nov 2024 08:15:56 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"pid":2908,"pstart":79263,"type":"qmclone","status":"running","user":"root@pam","upid":"UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:","tokenid":"root_api_token","node":"pve1","id":"100","starttime":1731053732}}
+2024/11/08 11:16:00 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:16:00 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 248
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:15:58 GMT
+Expires: Fri, 08 Nov 2024 08:15:58 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"type":"qmclone","pstart":79263,"pid":2908,"id":"100","starttime":1731053732,"node":"pve1","user":"root@pam","upid":"UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:","tokenid":"root_api_token","status":"running"}}
+2024/11/08 11:16:02 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:16:02 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 248
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:16:00 GMT
+Expires: Fri, 08 Nov 2024 08:16:00 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"status":"running","upid":"UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:","user":"root@pam","tokenid":"root_api_token","node":"pve1","starttime":1731053732,"id":"100","pid":2908,"pstart":79263,"type":"qmclone"}}
+2024/11/08 11:16:04 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:16:04 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 248
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:16:03 GMT
+Expires: Fri, 08 Nov 2024 08:16:03 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"type":"qmclone","pstart":79263,"pid":2908,"id":"100","starttime":1731053732,"node":"pve1","upid":"UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:","user":"root@pam","tokenid":"root_api_token","status":"running"}}
+2024/11/08 11:16:06 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:16:06 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 248
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:16:05 GMT
+Expires: Fri, 08 Nov 2024 08:16:05 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"node":"pve1","starttime":1731053732,"id":"100","status":"running","user":"root@pam","upid":"UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:","tokenid":"root_api_token","pstart":79263,"type":"qmclone","pid":2908}}
+2024/11/08 11:16:08 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:16:08 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 248
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:16:07 GMT
+Expires: Fri, 08 Nov 2024 08:16:07 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"pstart":79263,"type":"qmclone","pid":2908,"node":"pve1","starttime":1731053732,"id":"100","status":"running","user":"root@pam","upid":"UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:","tokenid":"root_api_token"}}
+2024/11/08 11:16:10 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:16:10 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 248
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:16:09 GMT
+Expires: Fri, 08 Nov 2024 08:16:09 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"pid":2908,"pstart":79263,"type":"qmclone","status":"running","tokenid":"root_api_token","user":"root@pam","upid":"UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:","node":"pve1","starttime":1731053732,"id":"100"}}
+2024/11/08 11:16:12 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:16:12 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 248
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:16:11 GMT
+Expires: Fri, 08 Nov 2024 08:16:11 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"starttime":1731053732,"id":"100","node":"pve1","tokenid":"root_api_token","user":"root@pam","upid":"UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:","status":"running","type":"qmclone","pstart":79263,"pid":2908}}
+2024/11/08 11:16:14 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:16:14 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 248
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:16:13 GMT
+Expires: Fri, 08 Nov 2024 08:16:13 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"node":"pve1","starttime":1731053732,"id":"100","status":"running","tokenid":"root_api_token","upid":"UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:","user":"root@pam","pstart":79263,"type":"qmclone","pid":2908}}
+2024/11/08 11:16:16 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:16:16 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 248
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:16:15 GMT
+Expires: Fri, 08 Nov 2024 08:16:15 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"pid":2908,"type":"qmclone","pstart":79263,"upid":"UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:","user":"root@pam","tokenid":"root_api_token","status":"running","starttime":1731053732,"id":"100","node":"pve1"}}
+2024/11/08 11:16:18 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:16:18 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 248
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:16:17 GMT
+Expires: Fri, 08 Nov 2024 08:16:17 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"id":"100","starttime":1731053732,"node":"pve1","user":"root@pam","upid":"UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:","tokenid":"root_api_token","status":"running","type":"qmclone","pstart":79263,"pid":2908}}
+2024/11/08 11:16:20 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:16:20 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 266
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:16:19 GMT
+Expires: Fri, 08 Nov 2024 08:16:19 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"pid":2908,"exitstatus":"OK","pstart":79263,"type":"qmclone","status":"stopped","user":"root@pam","upid":"UPID:pve1:00000B5C:0001359F:672DC8A4:qmclone:100:root@pam!root_api_token:","tokenid":"root_api_token","node":"pve1","starttime":1731053732,"id":"100"}}
+2024/11/08 11:16:30 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/qemu/101/config HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:16:30 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 496
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:16:29 GMT
+Expires: Fri, 08 Nov 2024 08:16:29 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"digest":"6473c969015a0f353c0c0f53f94392016190f438","cores":1,"vmgenid":"ecf980b9-188d-4762-8e4a-8d4a8c32d627","virtio0":"local:101/vm-101-disk-0.raw,iothread=1,size=83984375K","ostype":"other","ide2":"none,media=cdrom","numa":0,"scsihw":"virtio-scsi-pci","net0":"e1000=3A:C9:C3:68:AF:A9,bridge=vmbr0,firewall=1","smbios1":"uuid=4307ae2f-2110-406b-8edb-b8e0e6e08d96","boot":"order=virtio0","name":"TERRAFORM-TEST","meta":"creation-qemu=7.2.10,ctime=1731051665","sockets":1,"memory":512}}
+2024/11/08 11:16:30 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/storage/local/content HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:16:31 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 324
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:16:29 GMT
+Expires: Fri, 08 Nov 2024 08:16:29 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"content":"images","vmid":100,"size":86000000000,"ctime":1731053221,"format":"raw","parent":null,"used":14337757184,"volid":"local:100/base-100-disk-1.raw"},{"volid":"local:101/vm-101-disk-0.raw","used":14330134528,"format":"raw","ctime":1731053778,"parent":null,"content":"images","vmid":101,"size":86000000000}]}
+2024/11/08 11:16:31 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/storage/local/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:16:31 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 172
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:16:29 GMT
+Expires: Fri, 08 Nov 2024 08:16:29 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"content":"vztmpl,iso,images,backup,rootdir,snippets","active":1,"type":"dir","used":46667509760,"enabled":1,"avail":155692683264,"shared":0,"total":211181367296}}
+2024/11/08 11:16:31 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/ha/resources/101 HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:16:31 <<<<<<<<<< RESULT:
+HTTP/1.1 500 no such resource 'vm:101'
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:16:29 GMT
+Expires: Fri, 08 Nov 2024 08:16:29 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+[90mFri, 08 Nov 2024 11:16:31 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:977[0m[36m >[0m Original disks: 'map[0:map[aio: backup:true cache:none discard: file: format: iops:0 iops_max:0 iops_max_length:0 iops_rd:0 iops_rd_max:0 iops_rd_max_length:0 iops_wr:0 iops_wr_max:0 iops_wr_max_length:0 iothread:1 mbps:0 mbps_rd:0 mbps_rd_max:0 mbps_wr:0 mbps_wr_max:0 media: replicate:0 size:80G slot:0 ssd:0 storage:local storage_type: type:scsi volume:]]', Clone Disks 'map[0:map[file:101/vm-101-disk-0.raw format:raw iothread:1 size:83984375K slot:0 storage:local storage_type:dir type:virtio volume:local:101/vm-101-disk-0.raw]]' [36mloggerName=[0mresource_vm_create [36mvmid=[0m
+2024/11/08 11:16:31 >>>>>>>>>> REQUEST:
+POST /api2/json/nodes/pve1/qemu/101/config HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Content-Length: 301
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip
+
+agent=1&bios=seabios&bootdisk=scsi0&cores=1&cpu=host&hotplug=network%2Cdisk%2Cusb&kvm=1&memory=512&name=TERRAFORM-TEST&net0=virtio%3D32%3ACC%3A55%3AD6%3AE9%3A09%2Cbridge%3Dvmbr0&numa=0&onboot=0&scsi0=local%3A101%2Fvm-101-disk-0.raw%2Csize%3D80G%2Ciothread%3D1&scsihw=virtio-scsi-pci&sockets=1&tablet=1
+2024/11/08 11:16:31 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Connection: close
+Content-Length: 85
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:16:29 GMT
+Expires: Fri, 08 Nov 2024 08:16:29 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":"UPID:pve1:00000BEB:00014BC4:672DC8DD:qmconfig:101:root@pam!root_api_token:"}
+2024/11/08 11:16:31 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000BEB:00014BC4:672DC8DD:qmconfig:101:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:16:31 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 250
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:16:29 GMT
+Expires: Fri, 08 Nov 2024 08:16:29 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"type":"qmconfig","pstart":84932,"pid":3051,"starttime":1731053789,"id":"101","node":"pve1","upid":"UPID:pve1:00000BEB:00014BC4:672DC8DD:qmconfig:101:root@pam!root_api_token:","user":"root@pam","tokenid":"root_api_token","status":"running"}}
+2024/11/08 11:16:33 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000BEB:00014BC4:672DC8DD:qmconfig:101:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:16:33 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 268
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:16:31 GMT
+Expires: Fri, 08 Nov 2024 08:16:31 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"id":"101","starttime":1731053789,"node":"pve1","user":"root@pam","upid":"UPID:pve1:00000BEB:00014BC4:672DC8DD:qmconfig:101:root@pam!root_api_token:","tokenid":"root_api_token","status":"stopped","type":"qmconfig","exitstatus":"OK","pstart":84932,"pid":3051}}
+2024/11/08 11:16:33 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/qemu/101/config HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:16:33 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 670
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:16:31 GMT
+Expires: Fri, 08 Nov 2024 08:16:31 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"vmgenid":"ecf980b9-188d-4762-8e4a-8d4a8c32d627","virtio0":"local:101/vm-101-disk-0.raw,iothread=1,size=83984375K","ide2":"none,media=cdrom","hotplug":"network,disk,usb","scsihw":"virtio-scsi-pci","cpu":"host","smbios1":"uuid=4307ae2f-2110-406b-8edb-b8e0e6e08d96","numa":0,"name":"TERRAFORM-TEST","sockets":1,"meta":"creation-qemu=7.2.10,ctime=1731051665","onboot":0,"ostype":"other","digest":"2dc161b17a145bbbff8d0286cab986af9bbb0a1f","agent":"1","kvm":1,"bios":"seabios","cores":1,"net0":"virtio=32:CC:55:D6:E9:09,bridge=vmbr0","boot":"order=virtio0","bootdisk":"scsi0","scsi0":"local:101/vm-101-disk-0.raw,iothread=1,size=83984375K","memory":512,"tablet":1}}
+2024/11/08 11:16:33 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/storage/local/content HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:16:33 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 324
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:16:31 GMT
+Expires: Fri, 08 Nov 2024 08:16:31 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"parent":null,"ctime":1731053221,"format":"raw","size":86000000000,"vmid":100,"content":"images","volid":"local:100/base-100-disk-1.raw","used":14337757184},{"size":86000000000,"content":"images","vmid":101,"ctime":1731053778,"parent":null,"format":"raw","used":14330134528,"volid":"local:101/vm-101-disk-0.raw"}]}
+2024/11/08 11:16:33 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/storage/local/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:16:33 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 172
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:16:31 GMT
+Expires: Fri, 08 Nov 2024 08:16:31 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"content":"rootdir,snippets,vztmpl,backup,images,iso","type":"dir","active":1,"avail":155692675072,"total":211181367296,"shared":0,"used":46667517952,"enabled":1}}
+2024/11/08 11:16:33 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/storage/local/content HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:16:33 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 324
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:16:31 GMT
+Expires: Fri, 08 Nov 2024 08:16:31 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"ctime":1731053221,"parent":null,"format":"raw","content":"images","vmid":100,"size":86000000000,"volid":"local:100/base-100-disk-1.raw","used":14337757184},{"volid":"local:101/vm-101-disk-0.raw","used":14330134528,"parent":null,"ctime":1731053778,"format":"raw","vmid":101,"content":"images","size":86000000000}]}
+2024/11/08 11:16:33 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/storage/local/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:16:33 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 172
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:16:31 GMT
+Expires: Fri, 08 Nov 2024 08:16:31 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"total":211181367296,"shared":0,"avail":155692675072,"enabled":1,"used":46667517952,"active":1,"type":"dir","content":"rootdir,snippets,vztmpl,backup,images,iso"}}
+2024/11/08 11:16:33 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/ha/resources/101 HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:16:33 <<<<<<<<<< RESULT:
+HTTP/1.1 500 no such resource 'vm:101'
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:16:31 GMT
+Expires: Fri, 08 Nov 2024 08:16:31 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+[90mFri, 08 Nov 2024 11:16:33 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1757[0m[36m >[0m Checking disk sizing. Original '80.09374141693115G', New '80G' [36mdiskId=[0m0 [36mloggerName=[0mprepareDiskSize
+[90mFri, 08 Nov 2024 11:18:24 +0300[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/util.go:159[0m[36m >[0m Enabling the capture of log-library logs as ithe _capturelog flag was detected
+[90mFri, 08 Nov 2024 11:18:24 +0300[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/util.go:192[0m[36m >[0m Logging Started. Root Logger Set to level debug
+[90mFri, 08 Nov 2024 11:18:24 +0300[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1463[0m[36m >[0m Reading configuration for vmid [36mloggerName=[0mresource_vm_read [36mvmid=[0m101
+2024/11/08 11:18:24 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/resources?type=vm HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:18:24 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 498
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:18:23 GMT
+Expires: Fri, 08 Nov 2024 08:18:23 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"diskwrite":0,"mem":0,"node":"pve1","disk":0,"maxcpu":1,"status":"stopped","name":"kali","type":"qemu","diskread":0,"cpu":0,"netout":0,"id":"qemu/100","uptime":0,"vmid":100,"netin":0,"maxmem":536870912,"maxdisk":86000000000,"template":1},{"status":"stopped","maxcpu":1,"disk":0,"node":"pve1","mem":0,"diskwrite":0,"diskread":0,"type":"qemu","name":"TERRAFORM-TEST","maxmem":536870912,"maxdisk":86000000000,"netin":0,"uptime":0,"vmid":101,"id":"qemu/101","cpu":0,"netout":0,"template":0}]}
+2024/11/08 11:18:24 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/qemu/101/config HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:18:24 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 670
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:18:23 GMT
+Expires: Fri, 08 Nov 2024 08:18:23 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"scsihw":"virtio-scsi-pci","hotplug":"network,disk,usb","cpu":"host","smbios1":"uuid=4307ae2f-2110-406b-8edb-b8e0e6e08d96","numa":0,"vmgenid":"ecf980b9-188d-4762-8e4a-8d4a8c32d627","virtio0":"local:101/vm-101-disk-0.raw,iothread=1,size=83984375K","ide2":"none,media=cdrom","sockets":1,"meta":"creation-qemu=7.2.10,ctime=1731051665","onboot":0,"name":"TERRAFORM-TEST","net0":"virtio=32:CC:55:D6:E9:09,bridge=vmbr0","ostype":"other","digest":"2dc161b17a145bbbff8d0286cab986af9bbb0a1f","agent":"1","kvm":1,"bios":"seabios","cores":1,"memory":512,"tablet":1,"bootdisk":"scsi0","boot":"order=virtio0","scsi0":"local:101/vm-101-disk-0.raw,iothread=1,size=83984375K"}}
+2024/11/08 11:18:24 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/storage/local/content HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:18:25 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 324
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:18:23 GMT
+Expires: Fri, 08 Nov 2024 08:18:23 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"size":86000000000,"vmid":100,"content":"images","parent":null,"ctime":1731053221,"format":"raw","used":14337757184,"volid":"local:100/base-100-disk-1.raw"},{"parent":null,"ctime":1731053778,"format":"raw","size":86000000000,"vmid":101,"content":"images","volid":"local:101/vm-101-disk-0.raw","used":14330134528}]}
+2024/11/08 11:18:25 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/storage/local/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:18:25 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 172
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:18:23 GMT
+Expires: Fri, 08 Nov 2024 08:18:23 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"total":211181367296,"shared":0,"avail":155684261888,"enabled":1,"used":46675931136,"active":1,"type":"dir","content":"vztmpl,iso,backup,images,rootdir,snippets"}}
+2024/11/08 11:18:25 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/storage/local/content HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:18:25 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 324
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:18:23 GMT
+Expires: Fri, 08 Nov 2024 08:18:23 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"ctime":1731053221,"format":"raw","parent":null,"size":86000000000,"vmid":100,"content":"images","volid":"local:100/base-100-disk-1.raw","used":14337757184},{"format":"raw","ctime":1731053778,"parent":null,"size":86000000000,"content":"images","vmid":101,"volid":"local:101/vm-101-disk-0.raw","used":14330134528}]}
+2024/11/08 11:18:25 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/storage/local/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:18:25 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 172
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:18:23 GMT
+Expires: Fri, 08 Nov 2024 08:18:23 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"content":"vztmpl,images,backup,iso,rootdir,snippets","type":"dir","active":1,"avail":155684261888,"shared":0,"total":211181367296,"used":46675931136,"enabled":1}}
+2024/11/08 11:18:25 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/ha/resources/101 HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:18:25 <<<<<<<<<< RESULT:
+HTTP/1.1 500 no such resource 'vm:101'
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:18:23 GMT
+Expires: Fri, 08 Nov 2024 08:18:23 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2024/11/08 11:18:25 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/qemu/101/status/current HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:18:25 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 249
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:18:23 GMT
+Expires: Fri, 08 Nov 2024 08:18:23 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"maxmem":536870912,"qmpstatus":"stopped","diskwrite":0,"agent":1,"status":"stopped","uptime":0,"maxdisk":86000000000,"disk":0,"netout":0,"diskread":0,"cpus":1,"mem":0,"vmid":101,"name":"TERRAFORM-TEST","ha":{"managed":0},"cpu":0,"netin":0}}
+2024/11/08 11:18:25 [DEBUG] VM status: stopped
+[90mFri, 08 Nov 2024 11:18:25 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1493[0m[36m >[0m [READ] Received Config from Proxmox API: {"name":"TERRAFORM-TEST","bios":"seabios","onboot":false,"tablet":true,"agent":1,"memory":512,"ostype":"other","cores":1,"sockets":1,"cpu":"host","numa":false,"kvm":true,"hotplug":"network,disk,usb","iso":"none","boot":"order=virtio0","bootdisk":"scsi0","scsihw":"virtio-scsi-pci","disk":{"0":{"file":"101/vm-101-disk-0.raw","format":"raw","iothread":1,"size":"83984375K","slot":0,"storage":"local","storage_type":"dir","type":"scsi","volume":"local:101/vm-101-disk-0.raw"}},"network":{"0":{"bridge":"vmbr0","id":0,"macaddr":"32:CC:55:D6:E9:09","model":"virtio"}}} [36mloggerName=[0mresource_vm_read [36mvmid=[0m101
+[90mFri, 08 Nov 2024 11:18:25 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1555[0m[36m >[0m key 'force_create' is set to false [36mloggerName=[0mresource_vm_read [36mvmid=[0m101
+[90mFri, 08 Nov 2024 11:18:25 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1555[0m[36m >[0m key 'define_connection_info' is set to true [36mloggerName=[0mresource_vm_read [36mvmid=[0m101
+[90mFri, 08 Nov 2024 11:18:25 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1555[0m[36m >[0m key 'oncreate' is set to true [36mloggerName=[0mresource_vm_read [36mvmid=[0m101
+[90mFri, 08 Nov 2024 11:18:25 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1583[0m[36m >[0m [READ] Disk Processed 'map[file:101/vm-101-disk-0.raw format:raw iothread:1 size:83984375K slot:0 storage:local storage_type:dir type:scsi volume:local:101/vm-101-disk-0.raw]' [36mloggerName=[0mresource_vm_read [36mvmid=[0m101
+[90mFri, 08 Nov 2024 11:18:25 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1610[0m[36m >[0m Hostpci Block Processed 'map[]' [36mloggerName=[0mresource_vm_read [36mvmid=[0m101
+[90mFri, 08 Nov 2024 11:18:25 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1617[0m[36m >[0m Usb Block Processed 'map[]' [36mloggerName=[0mresource_vm_read [36mvmid=[0m101
+[90mFri, 08 Nov 2024 11:18:25 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1624[0m[36m >[0m Unused Disk Block Processed 'map[]' [36mloggerName=[0mresource_vm_read [36mvmid=[0m101
+[90mFri, 08 Nov 2024 11:18:25 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1638[0m[36m >[0m Analyzing Network blocks  [36mloggerName=[0mresource_vm_read [36mvmid=[0m101
+[90mFri, 08 Nov 2024 11:18:25 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1640[0m[36m >[0m Network block received 'map[bridge:vmbr0 id:0 macaddr:32:CC:55:D6:E9:09 model:virtio]' [36mloggerName=[0mresource_vm_read [36mvmid=[0m101
+2024/11/08 11:18:25 >>>>>>>>>> REQUEST:
+GET /api2/json/pools HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:18:25 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 11
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:18:23 GMT
+Expires: Fri, 08 Nov 2024 08:18:23 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[]}
+[90mFri, 08 Nov 2024 11:18:25 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1690[0m[36m >[0m VM Net Config 'map[0:map[bridge:vmbr0 id:0 macaddr:32:CC:55:D6:E9:09 model:virtio tag:-1]]' from '[map[bridge:vmbr0 macaddr:32:CC:55:D6:E9:09 model:virtio tag:-1]]' set as '[map[bridge:vmbr0 firewall:false link_down:false macaddr:32:CC:55:D6:E9:09 model:virtio mtu:0 queues:0 rate:0 tag:-1]]' type of 'string' [36mloggerName=[0mresource_vm_read [36mvmid=[0m101
+[90mFri, 08 Nov 2024 11:18:25 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1692[0m[36m >[0m Finished VM read resulting in data: '{"additional_wait":5,"agent":1,"args":"","automatic_reboot":true,"balloon":0,"bios":"seabios","boot":"order=virtio0","bootdisk":"scsi0","bridge":"","ci_wait":0,"cicustom":"","cipassword":"","ciuser":"","clone":"kali","clone_wait":10,"cloudinit_cdrom_storage":"","cores":1,"cpu":"host","default_ipv4_address":"","define_connection_info":true,"desc":"","disk":[{"aio":"","backup":true,"cache":"none","discard":"","file":"101/vm-101-disk-0.raw","format":"raw","iops":0,"iops_max":0,"iops_max_length":0,"iops_rd":0,"iops_rd_max":0,"iops_rd_max_length":0,"iops_wr":0,"iops_wr_max":0,"iops_wr_max_length":0,"iothread":1,"mbps":0,"mbps_rd":0,"mbps_rd_max":0,"mbps_wr":0,"mbps_wr_max":0,"media":"","replicate":0,"size":"83984375K","slot":0,"ssd":0,"storage":"local","storage_type":"dir","type":"scsi","volume":"local:101/vm-101-disk-0.raw"}],"disk_gb":0,"force_create":false,"force_recreate_on_change_of":"","full_clone":true,"guest_agent_ready_timeout":100,"hagroup":"","hastate":"","hostpci":[],"hotplug":"network,disk,usb","ipconfig0":"","ipconfig1":"","ipconfig10":"","ipconfig11":"","ipconfig12":"","ipconfig13":"","ipconfig14":"","ipconfig15":"","ipconfig2":"","ipconfig3":"","ipconfig4":"","ipconfig5":"","ipconfig6":"","ipconfig7":"","ipconfig8":"","ipconfig9":"","iso":"","kvm":true,"mac":"","machine":"","memory":512,"name":"TERRAFORM-TEST","nameserver":"","network":[{"bridge":"vmbr0","firewall":false,"link_down":false,"macaddr":"32:CC:55:D6:E9:09","model":"virtio","mtu":0,"queues":0,"rate":0,"tag":-1}],"nic":"","numa":false,"onboot":false,"oncreate":true,"os_network_config":"","os_type":"","pool":"","preprovision":true,"pxe":false,"qemu_os":"other","reboot_required":false,"scsihw":"virtio-scsi-pci","searchdomain":"","serial":[],"sockets":1,"ssh_forward_ip":"","ssh_host":"","ssh_port":"","ssh_private_key":"","ssh_user":"","sshkeys":"","startup":"","storage":"","storage_type":"","tablet":true,"tags":"","target_node":"pve1","unused_disk":[],"usb":[],"vcpus":0,"vga":[],"vlan":-1,"vmid":0}' [36mloggerName=[0mresource_vm_read [36mvmid=[0m101
+[90mFri, 08 Nov 2024 11:18:25 +0300[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/util.go:159[0m[36m >[0m Enabling the capture of log-library logs as ithe _capturelog flag was detected
+[90mFri, 08 Nov 2024 11:18:25 +0300[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/util.go:192[0m[36m >[0m Logging Started. Root Logger Set to level debug
+[90mFri, 08 Nov 2024 11:18:27 +0300[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/util.go:159[0m[36m >[0m Enabling the capture of log-library logs as ithe _capturelog flag was detected
+[90mFri, 08 Nov 2024 11:18:27 +0300[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/util.go:192[0m[36m >[0m Logging Started. Root Logger Set to level debug
+2024/11/08 11:18:27 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/resources?type=vm HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:18:27 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 498
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:18:25 GMT
+Expires: Fri, 08 Nov 2024 08:18:25 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"netin":0,"maxmem":536870912,"maxdisk":86000000000,"id":"qemu/100","vmid":100,"uptime":0,"netout":0,"cpu":0,"template":1,"maxcpu":1,"status":"stopped","disk":0,"node":"pve1","diskwrite":0,"mem":0,"diskread":0,"type":"qemu","name":"kali"},{"uptime":0,"vmid":101,"id":"qemu/101","maxmem":536870912,"maxdisk":86000000000,"netin":0,"cpu":0,"netout":0,"template":0,"status":"stopped","maxcpu":1,"mem":0,"diskwrite":0,"disk":0,"node":"pve1","type":"qemu","diskread":0,"name":"TERRAFORM-TEST"}]}
+2024/11/08 11:18:27 >>>>>>>>>> REQUEST:
+POST /api2/json/nodes/pve1/qemu/101/status/stop HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Content-Length: 0
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip
+
+2024/11/08 11:18:27 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Connection: close
+Content-Length: 83
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:18:25 GMT
+Expires: Fri, 08 Nov 2024 08:18:25 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":"UPID:pve1:00000D18:0001793C:672DC951:qmstop:101:root@pam!root_api_token:"}
+2024/11/08 11:18:27 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000D18:0001793C:672DC951:qmstop:101:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:18:27 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 264
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:18:25 GMT
+Expires: Fri, 08 Nov 2024 08:18:25 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"type":"qmstop","exitstatus":"OK","pstart":96572,"pid":3352,"starttime":1731053905,"id":"101","node":"pve1","upid":"UPID:pve1:00000D18:0001793C:672DC951:qmstop:101:root@pam!root_api_token:","user":"root@pam","tokenid":"root_api_token","status":"stopped"}}
+2024/11/08 11:18:27 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/qemu/101/status/current HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:18:27 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 249
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:18:25 GMT
+Expires: Fri, 08 Nov 2024 08:18:25 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"ha":{"managed":0},"netin":0,"cpu":0,"vmid":101,"name":"TERRAFORM-TEST","diskread":0,"cpus":1,"mem":0,"disk":0,"netout":0,"maxdisk":86000000000,"status":"stopped","agent":1,"uptime":0,"qmpstatus":"stopped","maxmem":536870912,"diskwrite":0}}
+2024/11/08 11:18:27 >>>>>>>>>> REQUEST:
+DELETE /api2/json/nodes/pve1/qemu/101 HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:18:27 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 86
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:18:25 GMT
+Expires: Fri, 08 Nov 2024 08:18:25 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":"UPID:pve1:00000D19:0001793E:672DC951:qmdestroy:101:root@pam!root_api_token:"}
+2024/11/08 11:18:27 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000D19:0001793E:672DC951:qmdestroy:101:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:18:27 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 252
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:18:25 GMT
+Expires: Fri, 08 Nov 2024 08:18:25 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"status":"running","tokenid":"root_api_token","upid":"UPID:pve1:00000D19:0001793E:672DC951:qmdestroy:101:root@pam!root_api_token:","user":"root@pam","node":"pve1","starttime":1731053905,"id":"101","pid":3353,"pstart":96574,"type":"qmdestroy"}}
+2024/11/08 11:18:29 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000D19:0001793E:672DC951:qmdestroy:101:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:18:29 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 270
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:18:27 GMT
+Expires: Fri, 08 Nov 2024 08:18:27 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"node":"pve1","starttime":1731053905,"id":"101","status":"stopped","tokenid":"root_api_token","upid":"UPID:pve1:00000D19:0001793E:672DC951:qmdestroy:101:root@pam!root_api_token:","user":"root@pam","pstart":96574,"exitstatus":"OK","type":"qmdestroy","pid":3353}}
+[90mFri, 08 Nov 2024 11:20:00 +0300[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/util.go:159[0m[36m >[0m Enabling the capture of log-library logs as ithe _capturelog flag was detected
+[90mFri, 08 Nov 2024 11:20:00 +0300[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/util.go:192[0m[36m >[0m Logging Started. Root Logger Set to level debug
+[90mFri, 08 Nov 2024 11:20:02 +0300[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/util.go:159[0m[36m >[0m Enabling the capture of log-library logs as ithe _capturelog flag was detected
+[90mFri, 08 Nov 2024 11:20:02 +0300[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/util.go:192[0m[36m >[0m Logging Started. Root Logger Set to level debug
+2024/11/08 11:20:02 [DEBUG] setting computed for "unused_disk" from ComputedKeys
+[90mFri, 08 Nov 2024 11:20:02 +0300[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:837[0m[36m >[0m VM creation [36mloggerName=[0mresource_vm_create [36mvmid=[0m
+[90mFri, 08 Nov 2024 11:20:02 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:838[0m[36m >[0m VM creation resource data: '{"additional_wait":5,"agent":1,"args":"","automatic_reboot":true,"balloon":0,"bios":"seabios","boot":"","bootdisk":"scsi0","bridge":"","ci_wait":0,"cicustom":"","cipassword":"","ciuser":"","clone":"kali","clone_wait":10,"cloudinit_cdrom_storage":"","cores":1,"cpu":"host","default_ipv4_address":"","define_connection_info":true,"desc":"","disk":[{"aio":"","backup":true,"cache":"none","discard":"","file":"","format":"","iops":0,"iops_max":0,"iops_max_length":0,"iops_rd":0,"iops_rd_max":0,"iops_rd_max_length":0,"iops_wr":0,"iops_wr_max":0,"iops_wr_max_length":0,"iothread":1,"mbps":0,"mbps_rd":0,"mbps_rd_max":0,"mbps_wr":0,"mbps_wr_max":0,"media":"","replicate":0,"size":"100G","slot":0,"ssd":0,"storage":"local","storage_type":"","type":"scsi","volume":""}],"disk_gb":0,"force_create":false,"force_recreate_on_change_of":"","full_clone":true,"guest_agent_ready_timeout":100,"hagroup":"","hastate":"","hostpci":[],"hotplug":"network,disk,usb","ipconfig0":"","ipconfig1":"","ipconfig10":"","ipconfig11":"","ipconfig12":"","ipconfig13":"","ipconfig14":"","ipconfig15":"","ipconfig2":"","ipconfig3":"","ipconfig4":"","ipconfig5":"","ipconfig6":"","ipconfig7":"","ipconfig8":"","ipconfig9":"","iso":"","kvm":true,"mac":"","machine":"","memory":512,"name":"TERRAFORM-TEST","nameserver":"","network":[{"bridge":"vmbr0","firewall":false,"link_down":false,"macaddr":"","model":"virtio","mtu":0,"queues":0,"rate":0,"tag":-1}],"nic":"","numa":false,"onboot":false,"oncreate":true,"os_network_config":"","os_type":"","pool":"","preprovision":true,"pxe":false,"qemu_os":"","reboot_required":false,"scsihw":"virtio-scsi-pci","searchdomain":"","serial":[],"sockets":1,"ssh_forward_ip":"","ssh_host":"","ssh_port":"","ssh_private_key":"","ssh_user":"","sshkeys":"","startup":"","storage":"","storage_type":"","tablet":true,"tags":"","target_node":"pve1","unused_disk":[],"usb":[],"vcpus":0,"vga":[],"vlan":-1,"vmid":0}' [36mloggerName=[0mresource_vm_create [36mvmid=[0m
+2024/11/08 11:20:02 [DEBUG][QemuVmCreate] checking for duplicate name: TERRAFORM-TEST
+2024/11/08 11:20:02 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/resources?type=vm HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:20:03 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 249
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:20:01 GMT
+Expires: Fri, 08 Nov 2024 08:20:01 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"template":1,"vmid":100,"uptime":0,"id":"qemu/100","maxdisk":86000000000,"maxmem":536870912,"netin":0,"cpu":0,"netout":0,"type":"qemu","diskread":0,"name":"kali","status":"stopped","maxcpu":1,"mem":0,"diskwrite":0,"node":"pve1","disk":0}]}
+2024/11/08 11:20:03 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/nextid HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:20:03 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 14
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:20:01 GMT
+Expires: Fri, 08 Nov 2024 08:20:01 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":"101"}
+2024/11/08 11:20:03 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/resources?type=vm HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:20:03 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 249
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:20:01 GMT
+Expires: Fri, 08 Nov 2024 08:20:01 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"name":"kali","type":"qemu","diskread":0,"diskwrite":0,"mem":0,"node":"pve1","disk":0,"maxcpu":1,"status":"stopped","template":1,"netout":0,"cpu":0,"id":"qemu/100","vmid":100,"uptime":0,"netin":0,"maxdisk":86000000000,"maxmem":536870912}]}
+2024/11/08 11:20:03 [DEBUG][QemuVmCreate] cloning VM
+[90mFri, 08 Nov 2024 11:20:03 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:964[0m[36m >[0m Cloning VM [36mloggerName=[0mresource_vm_create [36mvmid=[0m
+2024/11/08 11:20:03 >>>>>>>>>> REQUEST:
+POST /api2/json/nodes/pve1/qemu/100/clone HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Content-Length: 62
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip
+
+full=1&name=TERRAFORM-TEST&newid=101&storage=local&target=pve1
+2024/11/08 11:20:03 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Connection: close
+Content-Length: 84
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:20:01 GMT
+Expires: Fri, 08 Nov 2024 08:20:01 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":"UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:"}
+2024/11/08 11:20:03 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:20:03 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 249
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:20:01 GMT
+Expires: Fri, 08 Nov 2024 08:20:01 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"id":"100","starttime":1731054001,"node":"pve1","upid":"UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:","user":"root@pam","tokenid":"root_api_token","status":"running","type":"qmclone","pstart":106125,"pid":3578}}
+2024/11/08 11:20:05 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:20:05 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 249
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:20:03 GMT
+Expires: Fri, 08 Nov 2024 08:20:03 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"user":"root@pam","upid":"UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:","tokenid":"root_api_token","status":"running","id":"100","starttime":1731054001,"node":"pve1","pid":3578,"type":"qmclone","pstart":106125}}
+2024/11/08 11:20:07 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:20:07 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 249
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:20:05 GMT
+Expires: Fri, 08 Nov 2024 08:20:05 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"pid":3578,"type":"qmclone","pstart":106125,"upid":"UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:","user":"root@pam","tokenid":"root_api_token","status":"running","id":"100","starttime":1731054001,"node":"pve1"}}
+2024/11/08 11:20:09 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:20:09 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 249
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:20:07 GMT
+Expires: Fri, 08 Nov 2024 08:20:07 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"tokenid":"root_api_token","upid":"UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:","user":"root@pam","status":"running","starttime":1731054001,"id":"100","node":"pve1","pid":3578,"type":"qmclone","pstart":106125}}
+2024/11/08 11:20:11 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:20:11 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 249
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:20:09 GMT
+Expires: Fri, 08 Nov 2024 08:20:09 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"pid":3578,"pstart":106125,"type":"qmclone","status":"running","upid":"UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:","user":"root@pam","tokenid":"root_api_token","node":"pve1","id":"100","starttime":1731054001}}
+2024/11/08 11:20:13 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:20:13 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 249
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:20:11 GMT
+Expires: Fri, 08 Nov 2024 08:20:11 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"status":"running","tokenid":"root_api_token","user":"root@pam","upid":"UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:","node":"pve1","starttime":1731054001,"id":"100","pid":3578,"pstart":106125,"type":"qmclone"}}
+2024/11/08 11:20:15 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:20:15 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 249
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:20:13 GMT
+Expires: Fri, 08 Nov 2024 08:20:13 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"pstart":106125,"type":"qmclone","pid":3578,"node":"pve1","id":"100","starttime":1731054001,"status":"running","user":"root@pam","upid":"UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:","tokenid":"root_api_token"}}
+2024/11/08 11:20:17 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:20:17 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 249
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:20:15 GMT
+Expires: Fri, 08 Nov 2024 08:20:15 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"pid":3578,"pstart":106125,"type":"qmclone","status":"running","user":"root@pam","upid":"UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:","tokenid":"root_api_token","node":"pve1","id":"100","starttime":1731054001}}
+2024/11/08 11:20:19 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:20:19 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 249
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:20:17 GMT
+Expires: Fri, 08 Nov 2024 08:20:17 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"node":"pve1","starttime":1731054001,"id":"100","status":"running","tokenid":"root_api_token","user":"root@pam","upid":"UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:","pstart":106125,"type":"qmclone","pid":3578}}
+2024/11/08 11:20:21 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:20:21 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 249
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:20:19 GMT
+Expires: Fri, 08 Nov 2024 08:20:19 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"status":"running","user":"root@pam","upid":"UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:","tokenid":"root_api_token","node":"pve1","starttime":1731054001,"id":"100","pid":3578,"pstart":106125,"type":"qmclone"}}
+2024/11/08 11:20:23 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:20:23 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 249
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:20:21 GMT
+Expires: Fri, 08 Nov 2024 08:20:21 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"node":"pve1","starttime":1731054001,"id":"100","status":"running","tokenid":"root_api_token","upid":"UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:","user":"root@pam","pstart":106125,"type":"qmclone","pid":3578}}
+2024/11/08 11:20:25 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:20:25 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 249
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:20:23 GMT
+Expires: Fri, 08 Nov 2024 08:20:23 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"node":"pve1","id":"100","starttime":1731054001,"status":"running","upid":"UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:","user":"root@pam","tokenid":"root_api_token","pstart":106125,"type":"qmclone","pid":3578}}
+2024/11/08 11:20:27 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:20:27 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 249
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:20:25 GMT
+Expires: Fri, 08 Nov 2024 08:20:25 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"pstart":106125,"type":"qmclone","pid":3578,"node":"pve1","starttime":1731054001,"id":"100","status":"running","user":"root@pam","upid":"UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:","tokenid":"root_api_token"}}
+2024/11/08 11:20:29 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:20:29 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 249
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:20:27 GMT
+Expires: Fri, 08 Nov 2024 08:20:27 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"pid":3578,"type":"qmclone","pstart":106125,"user":"root@pam","upid":"UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:","tokenid":"root_api_token","status":"running","starttime":1731054001,"id":"100","node":"pve1"}}
+2024/11/08 11:20:31 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:20:31 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 249
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:20:29 GMT
+Expires: Fri, 08 Nov 2024 08:20:29 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"pid":3578,"pstart":106125,"type":"qmclone","status":"running","user":"root@pam","upid":"UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:","tokenid":"root_api_token","node":"pve1","starttime":1731054001,"id":"100"}}
+2024/11/08 11:20:33 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:20:33 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 249
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:20:31 GMT
+Expires: Fri, 08 Nov 2024 08:20:31 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"starttime":1731054001,"id":"100","node":"pve1","tokenid":"root_api_token","user":"root@pam","upid":"UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:","status":"running","type":"qmclone","pstart":106125,"pid":3578}}
+2024/11/08 11:20:35 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:20:35 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 249
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:20:33 GMT
+Expires: Fri, 08 Nov 2024 08:20:33 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"type":"qmclone","pstart":106125,"pid":3578,"starttime":1731054001,"id":"100","node":"pve1","tokenid":"root_api_token","upid":"UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:","user":"root@pam","status":"running"}}
+2024/11/08 11:20:37 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:20:37 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 249
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:20:35 GMT
+Expires: Fri, 08 Nov 2024 08:20:35 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"type":"qmclone","pstart":106125,"pid":3578,"starttime":1731054001,"id":"100","node":"pve1","user":"root@pam","upid":"UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:","tokenid":"root_api_token","status":"running"}}
+2024/11/08 11:20:39 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:20:39 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 249
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:20:37 GMT
+Expires: Fri, 08 Nov 2024 08:20:37 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"pstart":106125,"type":"qmclone","pid":3578,"node":"pve1","id":"100","starttime":1731054001,"status":"running","tokenid":"root_api_token","upid":"UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:","user":"root@pam"}}
+2024/11/08 11:20:41 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:20:41 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 249
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:20:40 GMT
+Expires: Fri, 08 Nov 2024 08:20:40 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"type":"qmclone","pstart":106125,"pid":3578,"starttime":1731054001,"id":"100","node":"pve1","upid":"UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:","user":"root@pam","tokenid":"root_api_token","status":"running"}}
+2024/11/08 11:20:43 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:20:43 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 249
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:20:42 GMT
+Expires: Fri, 08 Nov 2024 08:20:42 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"tokenid":"root_api_token","user":"root@pam","upid":"UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:","status":"running","id":"100","starttime":1731054001,"node":"pve1","pid":3578,"type":"qmclone","pstart":106125}}
+2024/11/08 11:20:45 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:20:45 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 249
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:20:44 GMT
+Expires: Fri, 08 Nov 2024 08:20:44 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"node":"pve1","id":"100","starttime":1731054001,"status":"running","tokenid":"root_api_token","upid":"UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:","user":"root@pam","pstart":106125,"type":"qmclone","pid":3578}}
+2024/11/08 11:20:47 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:20:47 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 249
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:20:46 GMT
+Expires: Fri, 08 Nov 2024 08:20:46 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"type":"qmclone","pstart":106125,"pid":3578,"starttime":1731054001,"id":"100","node":"pve1","upid":"UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:","user":"root@pam","tokenid":"root_api_token","status":"running"}}
+2024/11/08 11:20:49 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:20:49 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 249
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:20:48 GMT
+Expires: Fri, 08 Nov 2024 08:20:48 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"node":"pve1","starttime":1731054001,"id":"100","status":"running","tokenid":"root_api_token","upid":"UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:","user":"root@pam","pstart":106125,"type":"qmclone","pid":3578}}
+2024/11/08 11:20:51 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:20:52 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 249
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:20:50 GMT
+Expires: Fri, 08 Nov 2024 08:20:50 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"pid":3578,"type":"qmclone","pstart":106125,"tokenid":"root_api_token","upid":"UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:","user":"root@pam","status":"running","id":"100","starttime":1731054001,"node":"pve1"}}
+2024/11/08 11:20:54 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:20:54 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 267
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:20:52 GMT
+Expires: Fri, 08 Nov 2024 08:20:52 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"type":"qmclone","exitstatus":"OK","pstart":106125,"pid":3578,"id":"100","starttime":1731054001,"node":"pve1","user":"root@pam","upid":"UPID:pve1:00000DFA:00019E8D:672DC9B1:qmclone:100:root@pam!root_api_token:","tokenid":"root_api_token","status":"stopped"}}
+2024/11/08 11:21:04 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/qemu/101/config HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:21:04 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 496
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:21:02 GMT
+Expires: Fri, 08 Nov 2024 08:21:02 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"meta":"creation-qemu=7.2.10,ctime=1731051665","sockets":1,"memory":512,"name":"TERRAFORM-TEST","boot":"order=virtio0","numa":0,"net0":"e1000=56:6B:BC:D9:C0:D2,bridge=vmbr0,firewall=1","scsihw":"virtio-scsi-pci","smbios1":"uuid=47c8bd1d-4261-4374-aca9-f1ffe245131c","digest":"a6dac9616273add756f08c15e9d4154bc593b3ef","cores":1,"virtio0":"local:101/vm-101-disk-0.raw,iothread=1,size=83984375K","ostype":"other","vmgenid":"0222175d-a84d-45d6-a30c-abbf90788ccc","ide2":"none,media=cdrom"}}
+2024/11/08 11:21:04 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/storage/local/content HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:21:04 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 324
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:21:02 GMT
+Expires: Fri, 08 Nov 2024 08:21:02 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"volid":"local:100/base-100-disk-1.raw","used":14337757184,"ctime":1731053221,"parent":null,"format":"raw","size":86000000000,"content":"images","vmid":100},{"ctime":1731054050,"parent":null,"format":"raw","size":86000000000,"content":"images","vmid":101,"volid":"local:101/vm-101-disk-0.raw","used":14330134528}]}
+2024/11/08 11:21:04 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/storage/local/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:21:04 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 172
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:21:02 GMT
+Expires: Fri, 08 Nov 2024 08:21:02 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"active":1,"type":"dir","content":"rootdir,snippets,vztmpl,images,iso,backup","total":211181367296,"shared":0,"avail":155684184064,"enabled":1,"used":46676008960}}
+2024/11/08 11:21:04 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/ha/resources/101 HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:21:04 <<<<<<<<<< RESULT:
+HTTP/1.1 500 no such resource 'vm:101'
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:21:02 GMT
+Expires: Fri, 08 Nov 2024 08:21:02 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+[90mFri, 08 Nov 2024 11:21:04 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:977[0m[36m >[0m Original disks: 'map[0:map[aio: backup:true cache:none discard: file: format: iops:0 iops_max:0 iops_max_length:0 iops_rd:0 iops_rd_max:0 iops_rd_max_length:0 iops_wr:0 iops_wr_max:0 iops_wr_max_length:0 iothread:1 mbps:0 mbps_rd:0 mbps_rd_max:0 mbps_wr:0 mbps_wr_max:0 media: replicate:0 size:100G slot:0 ssd:0 storage:local storage_type: type:scsi volume:]]', Clone Disks 'map[0:map[file:101/vm-101-disk-0.raw format:raw iothread:1 size:83984375K slot:0 storage:local storage_type:dir type:virtio volume:local:101/vm-101-disk-0.raw]]' [36mloggerName=[0mresource_vm_create [36mvmid=[0m
+2024/11/08 11:21:04 >>>>>>>>>> REQUEST:
+POST /api2/json/nodes/pve1/qemu/101/config HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Content-Length: 302
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip
+
+agent=1&bios=seabios&bootdisk=scsi0&cores=1&cpu=host&hotplug=network%2Cdisk%2Cusb&kvm=1&memory=512&name=TERRAFORM-TEST&net0=virtio%3D0A%3A11%3AB5%3A5F%3A8F%3A79%2Cbridge%3Dvmbr0&numa=0&onboot=0&scsi0=local%3A101%2Fvm-101-disk-0.raw%2Csize%3D100G%2Ciothread%3D1&scsihw=virtio-scsi-pci&sockets=1&tablet=1
+2024/11/08 11:21:04 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Connection: close
+Content-Length: 85
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:21:03 GMT
+Expires: Fri, 08 Nov 2024 08:21:03 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":"UPID:pve1:00000E9D:0001B6A1:672DC9EF:qmconfig:101:root@pam!root_api_token:"}
+2024/11/08 11:21:04 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000E9D:0001B6A1:672DC9EF:qmconfig:101:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:21:04 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 251
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:21:03 GMT
+Expires: Fri, 08 Nov 2024 08:21:03 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"type":"qmconfig","pstart":112289,"pid":3741,"id":"101","starttime":1731054063,"node":"pve1","tokenid":"root_api_token","user":"root@pam","upid":"UPID:pve1:00000E9D:0001B6A1:672DC9EF:qmconfig:101:root@pam!root_api_token:","status":"running"}}
+2024/11/08 11:21:06 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000E9D:0001B6A1:672DC9EF:qmconfig:101:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:21:06 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 269
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:21:05 GMT
+Expires: Fri, 08 Nov 2024 08:21:05 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"tokenid":"root_api_token","upid":"UPID:pve1:00000E9D:0001B6A1:672DC9EF:qmconfig:101:root@pam!root_api_token:","user":"root@pam","status":"stopped","id":"101","starttime":1731054063,"node":"pve1","pid":3741,"type":"qmconfig","pstart":112289,"exitstatus":"OK"}}
+2024/11/08 11:21:06 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/qemu/101/config HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:21:06 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 670
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:21:05 GMT
+Expires: Fri, 08 Nov 2024 08:21:05 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"memory":512,"tablet":1,"scsi0":"local:101/vm-101-disk-0.raw,iothread=1,size=83984375K","boot":"order=virtio0","bootdisk":"scsi0","net0":"virtio=0A:11:B5:5F:8F:79,bridge=vmbr0","bios":"seabios","cores":1,"digest":"1b23819b3ce61191ccc24825f641b8d64d00dd2c","agent":"1","kvm":1,"ostype":"other","onboot":0,"meta":"creation-qemu=7.2.10,ctime=1731051665","sockets":1,"name":"TERRAFORM-TEST","numa":0,"smbios1":"uuid=47c8bd1d-4261-4374-aca9-f1ffe245131c","hotplug":"network,disk,usb","scsihw":"virtio-scsi-pci","cpu":"host","ide2":"none,media=cdrom","vmgenid":"0222175d-a84d-45d6-a30c-abbf90788ccc","virtio0":"local:101/vm-101-disk-0.raw,iothread=1,size=83984375K"}}
+2024/11/08 11:21:06 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/storage/local/content HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:21:06 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 324
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:21:05 GMT
+Expires: Fri, 08 Nov 2024 08:21:05 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"volid":"local:100/base-100-disk-1.raw","used":14337757184,"parent":null,"ctime":1731053221,"format":"raw","size":86000000000,"content":"images","vmid":100},{"format":"raw","ctime":1731054050,"parent":null,"size":86000000000,"content":"images","vmid":101,"volid":"local:101/vm-101-disk-0.raw","used":14330134528}]}
+2024/11/08 11:21:06 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/storage/local/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:21:06 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 172
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:21:05 GMT
+Expires: Fri, 08 Nov 2024 08:21:05 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"type":"dir","active":1,"content":"vztmpl,backup,iso,images,rootdir,snippets","total":211181367296,"shared":0,"avail":155684167680,"enabled":1,"used":46676025344}}
+2024/11/08 11:21:06 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/storage/local/content HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:21:06 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 324
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:21:05 GMT
+Expires: Fri, 08 Nov 2024 08:21:05 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"size":86000000000,"content":"images","vmid":100,"ctime":1731053221,"parent":null,"format":"raw","used":14337757184,"volid":"local:100/base-100-disk-1.raw"},{"size":86000000000,"content":"images","vmid":101,"parent":null,"ctime":1731054050,"format":"raw","used":14330134528,"volid":"local:101/vm-101-disk-0.raw"}]}
+2024/11/08 11:21:06 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/storage/local/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:21:06 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 172
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:21:05 GMT
+Expires: Fri, 08 Nov 2024 08:21:05 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"content":"rootdir,snippets,vztmpl,backup,images,iso","active":1,"type":"dir","avail":155684167680,"total":211181367296,"shared":0,"used":46676025344,"enabled":1}}
+2024/11/08 11:21:06 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/ha/resources/101 HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:21:06 <<<<<<<<<< RESULT:
+HTTP/1.1 500 no such resource 'vm:101'
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:21:05 GMT
+Expires: Fri, 08 Nov 2024 08:21:05 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+[90mFri, 08 Nov 2024 11:21:06 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1757[0m[36m >[0m Checking disk sizing. Original '80.09374141693115G', New '100G' [36mdiskId=[0m0 [36mloggerName=[0mprepareDiskSize
+[90mFri, 08 Nov 2024 11:21:06 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1759[0m[36m >[0m Resizing disk [36mdiskId=[0m0 [36mloggerName=[0mprepareDiskSize
+2024/11/08 11:21:06 >>>>>>>>>> REQUEST:
+PUT /api2/json/nodes/pve1/qemu/101/resize HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Content-Length: 20
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip
+
+disk=scsi0&size=100G
+2024/11/08 11:21:07 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 13
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:21:05 GMT
+Expires: Fri, 08 Nov 2024 08:21:05 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+[90mFri, 08 Nov 2024 11:21:07 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1065[0m[36m >[0m Set this vm (resource Id) to 'pve1/qemu/101' [36mloggerName=[0mresource_vm_create [36mvmid=[0m101
+2024/11/08 11:21:12 [DEBUG][QemuVmCreate] starting VM
+2024/11/08 11:21:12 >>>>>>>>>> REQUEST:
+POST /api2/json/nodes/pve1/qemu/101/status/start HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Content-Length: 0
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip
+
+2024/11/08 11:21:14 >>>>>>>>>> REQUEST:
+POST /api2/json/nodes/pve1/qemu/101/status/start HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Content-Length: 0
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip
+
+2024/11/08 11:21:14 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Connection: close
+Content-Length: 84
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:21:12 GMT
+Expires: Fri, 08 Nov 2024 08:21:12 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":"UPID:pve1:00000EDA:0001BA51:672DC9F8:qmstart:101:root@pam!root_api_token:"}
+2024/11/08 11:21:14 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000EDA:0001BA51:672DC9F8:qmstart:101:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:21:14 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 249
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:21:12 GMT
+Expires: Fri, 08 Nov 2024 08:21:12 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"user":"root@pam","upid":"UPID:pve1:00000EDA:0001BA51:672DC9F8:qmstart:101:root@pam!root_api_token:","tokenid":"root_api_token","status":"running","starttime":1731054072,"id":"101","node":"pve1","pid":3802,"type":"qmstart","pstart":113233}}
+2024/11/08 11:21:16 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000EDA:0001BA51:672DC9F8:qmstart:101:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:21:16 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 276
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:21:14 GMT
+Expires: Fri, 08 Nov 2024 08:21:14 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"status":"stopped","upid":"UPID:pve1:00000EDA:0001BA51:672DC9F8:qmstart:101:root@pam!root_api_token:","user":"root@pam","tokenid":"root_api_token","node":"pve1","id":"101","starttime":1731054072,"pid":3802,"exitstatus":"WARNINGS: 1","pstart":113233,"type":"qmstart"}}
+2024/11/08 11:21:18 >>>>>>>>>> REQUEST:
+POST /api2/json/nodes/pve1/qemu/101/status/start HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Content-Length: 0
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip
+
+2024/11/08 11:21:18 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Connection: close
+Content-Length: 84
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:21:16 GMT
+Expires: Fri, 08 Nov 2024 08:21:16 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":"UPID:pve1:00000EFF:0001BBE7:672DC9FC:qmstart:101:root@pam!root_api_token:"}
+2024/11/08 11:21:18 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000EFF:0001BBE7:672DC9FC:qmstart:101:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:21:18 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 249
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:21:16 GMT
+Expires: Fri, 08 Nov 2024 08:21:16 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"user":"root@pam","upid":"UPID:pve1:00000EFF:0001BBE7:672DC9FC:qmstart:101:root@pam!root_api_token:","tokenid":"root_api_token","status":"running","starttime":1731054076,"id":"101","node":"pve1","pid":3839,"type":"qmstart","pstart":113639}}
+2024/11/08 11:21:20 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/pve1/tasks/UPID:pve1:00000EFF:0001BBE7:672DC9FC:qmstart:101:root@pam!root_api_token:/status HTTP/1.1
+Host: 192.168.56.101:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=root@pam!root_api_token=88dc60c1-bab3-44b5-ae02-83bf42eda177
+Accept-Encoding: gzip
+
+2024/11/08 11:21:20 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 287
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 08 Nov 2024 08:21:18 GMT
+Expires: Fri, 08 Nov 2024 08:21:18 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"pid":3839,"pstart":113639,"exitstatus":"VM 101 already running","type":"qmstart","status":"stopped","tokenid":"root_api_token","upid":"UPID:pve1:00000EFF:0001BBE7:672DC9FC:qmstart:101:root@pam!root_api_token:","user":"root@pam","node":"pve1","starttime":1731054076,"id":"101"}}
