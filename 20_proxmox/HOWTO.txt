@@ -1,0 +1,5 @@
+rm ~/.ssh/known_hosts
+cp .vagrant/machines/pve1/virtualbox/private_key ~/.ssh/vagrant_key
+chmod 600 ~/.ssh/vagrant_key
+ssh -i ~/.ssh/vagrant_key vagrant@192.168.56.101
+ansible-playbook -i hosts main.yaml

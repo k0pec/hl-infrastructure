@@ -1,0 +1,31 @@
+---
+- name: cluster prepare
+  hosts: all
+  become: true
+  tags:
+    - all
+
+  tasks:
+    - name: Add hosts
+      copy:
+        dest: "/etc/hosts"
+        content: |
+          127.0.0.1       localhost
+          192.168.56.101 salt-main
+          192.168.56.102 minion-blue
+          192.168.56.103 minion-green
+
+    - name: "SSH passwd enabled"
+      shell: |
+         sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config; systemctl restart sshd
+
+    - name: "Add Salt subscription"
+      copy:
+        dest: "/etc/yum.repos.d/saltstack.repo"
+        content: |
+          [saltstack-repo]
+          name=SaltStack repo for Red Hat Enterprise Linux $releasever
+          baseurl=https://repo.saltproject.io/py3/redhat/$releasever/$basearch/latest
+          enabled=1
+          gpgcheck=1
+          gpgkey=https://repo.saltproject.io/py3/redhat/$releasever/$basearch/latest/SALTSTACK-GPG-KEY.pub

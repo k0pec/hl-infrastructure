@@ -2,6 +2,7 @@
 - name: cluster prepare
   hosts: pve1,pve2
   become: true
+  #serial: 1
   tags:
     - all
 
@@ -27,38 +28,37 @@
         url: https://enterprise.proxmox.com/debian/proxmox-release-bullseye.gpg
         dest: /etc/apt/trusted.gpg.d/proxmox-release-bullseye.gpg
 
-    # - name: "update"
-    #   block:
-    #     - name: "Update all"
-    #       apt:
-    #         upgrade: yes
-    #         update_cache: yes
-    #         force_apt_get: yes
-    #       register: update_result
-    #       until: update_result is succeeded
-    #       retries: 2  # Number of retries including the first attempt
-    #       delay: 10  # Delay in seconds between retries
+    - name: "update"
+      block:
+        - name: "Update all"
+          apt:
+            upgrade: yes
+            update_cache: yes
+            force_apt_get: yes
+          register: update_result
+          until: update_result is succeeded
+          retries: 2  # Number of retries including the first attempt
+          delay: 10  # Delay in seconds between retries
 
-    #   rescue:
-    #     - name: "Rebooting the node because the update failed"
-    #       ansible.builtin.reboot:
-    #         connect_timeout: 10
-    #         reboot_timeout: 600
-    #         pre_reboot_delay: 10
-    #       when: update_result.failed
+      rescue:
+        - name: "Rebooting the node because the update failed"
+          ansible.builtin.reboot:
+            connect_timeout: 5
+            reboot_timeout: 300
+            pre_reboot_delay: 0
+          when: update_result.failed
 
-    #     - name: "patch deb conf"
-    #       shell: |
-    #         debconf-set-selections <<< "grub-pc grub-pc/install_devices multiselect /dev/sda"
-    #       args:
-    #         executable: /bin/bash
-          
-
-    #     - name: "Retry Update all packages after reboot"
-    #       apt:
-    #         upgrade: yes
-    #         update_cache: yes
-    #         force_apt_get: yes
+        - name: "patch deb conf"
+          shell: |
+            debconf-set-selections <<< "grub-pc grub-pc/install_devices multiselect /dev/sda"
+          args:
+            executable: /bin/bash
+        
+        - name: "Retry Update all packages after reboot"
+          apt:
+            upgrade: yes
+            update_cache: yes
+            force_apt_get: yes
 
     - name: "Install custom kernel"
       apt:
@@ -66,35 +66,66 @@
         state: present
         update_cache: yes
 
-    - name: Check if reboot required
-      stat:
-        path: /var/run/reboot-required
-      register: reboot_required_file
+    # - name: Check if reboot required
+    #   stat:
+    #     path: /var/run/reboot-required
+    #   register: reboot_required_file
 
-    - name: Reboot the Debian or Ubuntu server
-      reboot:
-        msg: "Reboot initiated by Ansible due to kernel updates"
-        connect_timeout: 10
-        reboot_timeout: 600
-        pre_reboot_delay: 10
-        post_reboot_delay: 300
-        test_command: uptime
-      when: reboot_required_file.stat.exists
+    - name: INSTALL PROXMOX
+      block:
 
-    - name: Preconfigure postfix
-      shell: |
-        debconf-set-selections <<< "postfix postfix/mailname string $(hostname)";debconf-set-selections <<< "postfix postfix/main_mailer_type string 'Internet Site'"
-      args:
-        executable: /bin/bash
+        - name: Reboot the Debian or Ubuntu server
+          reboot:
+            msg: "Reboot initiated by Ansible due to kernel updates"
+            connect_timeout: 5
+            reboot_timeout: 300
+            pre_reboot_delay: 0
+            post_reboot_delay: 300
+            test_command: uptime
+          # when: reboot_required_file.stat.exists
 
-    - name: "Install postfix,proxmox,iscsi"
-      apt:
-        name:
-         - postfix
-         - proxmox-ve
-         - open-iscsi
-        state: present
-        update_cache: yes
+        - name: Preconfigure postfix
+          shell: |
+            debconf-set-selections <<< "postfix postfix/mailname string $(hostname)";debconf-set-selections <<< "postfix postfix/main_mailer_type string 'Internet Site'"
+          args:
+            executable: /bin/bash
+
+        - name: "Install postfix,proxmox,iscsi"
+          apt:
+            name:
+            - postfix
+            - proxmox-ve
+            - open-iscsi
+            state: present
+            update_cache: yes
+          register: install_result
+
+      rescue:
+
+        - name: Reboot the Debian or Ubuntu server
+          reboot:
+            msg: "Reboot initiated by Ansible due to kernel updates"
+            connect_timeout: 5
+            reboot_timeout: 300
+            pre_reboot_delay: 0
+            post_reboot_delay: 300
+            test_command: uptime
+          when: install_result.failed
+
+        - name: Preconfigure postfix
+          shell: |
+            debconf-set-selections <<< "postfix postfix/mailname string $(hostname)";debconf-set-selections <<< "postfix postfix/main_mailer_type string 'Internet Site'"
+          args:
+            executable: /bin/bash
+
+        - name: "Install postfix,proxmox,iscsi"
+          apt:
+            name:
+            - postfix
+            - proxmox-ve
+            - open-iscsi
+            state: present
+            update_cache: yes
 
 
     - name: "Deinstall old kernel"
@@ -102,6 +133,15 @@
         name: 
          - linux-image-amd64
          - linux-image-5.10*
+        state: absent
+    
+    - name: Update grub
+      shell: update-grub
+
+    - name: remove os-prober
+      apt:
+        name: 
+          - os-prober
         state: absent
 
     - name: Change root password
@@ -114,10 +154,10 @@
       shell:
         echo y | pveceph install
 
-    - name: Restart NTP client
-      service:
-        name: systemd-timesyncd.service
-        state: restarted
+    # - name: Restart NTP client
+    #   service:
+    #     name: systemd-timesyncd.service
+    #     state: restarted
 
 - name: cluster prepare
   hosts: pve-nfs

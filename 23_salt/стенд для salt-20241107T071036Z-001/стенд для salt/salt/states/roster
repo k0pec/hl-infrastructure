@@ -1,0 +1,11 @@
+minion-blue:
+  host: 192.168.56.102
+  user: root
+  sudo: True
+  passwd: salt
+
+minion-green:
+  host: 192.168.56.103
+  user: root
+  sudo: True
+  priv: /home/vagrant/minion_ssh_rsa

@@ -1,0 +1,59 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+home = ENV['HOME']
+Vagrant.configure(2) do |config|
+
+
+  config.vm.define "salt-main" do |main|
+    main.vm.network "private_network", adapter: 2, :device => "eth1", auto_config: false, virtualbox__intnet: "internal-net" # Internal network
+    main.vm.network "private_network", adapter: 3, :device => "eth2", ip: '192.168.56.101', netmask: "255.255.248.0" # Management
+    main.vm.hostname = "salt-main"
+    main.vm.box = "centos/7"
+    main.vm.box_version = "1905.1"
+    main.vm.provider :virtualbox do |virtualbox|
+      virtualbox.name = "salt-main"
+      virtualbox.customize ["modifyvm", :id, "--memory", "2024"]
+      virtualbox.customize ["modifyvm", :id, "--cpus", "2"]
+    end
+  end
+
+  config.vm.define "minion-blue" do |main|
+    main.vm.network "private_network", adapter: 2, :device => "eth1", auto_config: false, virtualbox__intnet: "internal-net" # Internal network
+    main.vm.network "private_network", adapter: 3, :device => "eth2", ip: '192.168.56.102', netmask: "255.255.248.0" # Management
+    main.vm.hostname = "minion-blue"
+    main.vm.box = "centos/7"
+    main.vm.box_version = "1905.1"
+    main.vm.provider :virtualbox do |virtualbox|
+      virtualbox.name = "minion-blue"
+      virtualbox.customize ["modifyvm", :id, "--memory", "2048"]
+      virtualbox.customize ["modifyvm", :id, "--cpus", "2"]
+    end
+  end
+
+  config.vm.define "minion-green" do |main|
+    main.vm.network "private_network", adapter: 2, :device => "eth1", auto_config: false, virtualbox__intnet: "internal-net" # Internal network
+    main.vm.network "private_network", adapter: 3, :device => "eth2", ip: '192.168.56.103', netmask: "255.255.248.0" # Management
+    main.vm.hostname = "minion-green"
+    main.vm.box = "centos/7"
+    main.vm.box_version = "1905.1"
+    main.vm.provider :virtualbox do |virtualbox|
+      virtualbox.name = "minion-green"
+      virtualbox.customize ["modifyvm", :id, "--memory", "1048"]
+      virtualbox.customize ["modifyvm", :id, "--cpus", "1"]
+    end
+  end
+
+  config.vm.provision "shell", run: "always", inline: <<-SHELL
+    mkdir -p ~root/.ssh
+    cp ~vagrant/.ssh/auth* ~root/.ssh
+  SHELL
+
+  # config.vm.provision "ansible" do |ansible|
+  #   ansible.compatibility_mode = "2.0"
+  #   ansible.playbook = "main.yaml"
+  #   ansible.verbose = "false"
+  #   ansible.become = "true"
+  # end
+
+end

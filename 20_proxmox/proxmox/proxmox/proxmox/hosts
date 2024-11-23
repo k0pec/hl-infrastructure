@@ -2,6 +2,6 @@
 ansible_ssh_common_args='-o StrictHostKeyChecking=no'
 
 [allhosts]
-pve1 ansible_host=192.168.56.101 ansible_ssh_user=vagrant ansible_ssh_private_key_file=~/.ssh/vagrant_key  ansible_port=22
-#pve2 ansible_host=192.168.56.102 ansible_ssh_user=vagrant ansible_ssh_private_key_file=~/.ssh/vagrant_key2  ansible_port=22
-#pve-nfs ansible_host=192.168.56.103 ansible_ssh_user=vagrant ansible_ssh_pass=vagrant
+pve1 ansible_host=192.168.0.59 ansible_ssh_user=vagrant ansible_ssh_private_key_file=~/.ssh/vagrant_key1 ansible_port=22
+pve2 ansible_host=192.168.0.60 ansible_ssh_user=vagrant ansible_ssh_private_key_file=~/.ssh/vagrant_key2 ansible_port=22
+pve-nfs ansible_host=192.168.0.61 ansible_ssh_user=vagrant ansible_ssh_private_key_file=~/.ssh/vagrant_key3 ansible_port=22

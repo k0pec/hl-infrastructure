@@ -1,0 +1,90 @@
+---
+- name: SALT-MINION
+  hosts: nginx
+  become: true
+  become_method: sudo
+  become_user: root
+  tasks:
+
+  - name: install pakages
+    dnf:
+      name: 
+        - nginx
+        - iptables
+        - iptables-services
+        - salt-minion
+      state: latest
+
+  - name: /etc/hosts
+    copy:
+      dest: "/etc/hosts"
+      content: |
+        127.0.0.1       localhost
+        192.168.0.102 salt-master
+
+  - name: /etc/salt/minion
+    copy:
+      dest: "/etc/salt/minion"
+      content: |
+        master salt-master
+
+  - name: Start salt-minion 
+    service:
+      name: salt-minion
+      state: started
+      enabled: yes
+
+  - name: Start iptables
+    service:
+      name: iptables
+      state: started
+      enabled: yes
+
+- name: SALT-MASTER
+  hosts: salt
+  become: true
+  become_method: sudo
+  become_user: root
+  tasks:
+  
+  - name: install pakages
+    dnf:
+      name: 
+        - salt-master
+        - salt-ssh
+      state: latest
+
+  - name: /etc/hosts
+    copy:
+      dest: "/etc/hosts"
+      content: |
+        127.0.0.1       localhost
+        192.168.0.101 salt-minion
+
+  - name: /etc/salt/master
+    copy:
+      dest: "/etc/salt/master"
+      content: |
+        file_roots:
+          base:
+            - /srv/salt
+
+  - name: Creates directory
+    file:
+      path: /srv
+      state: directory
+
+  - name: Copy content
+    copy:
+      src: salt
+      dest: /srv/salt
+      remote_src: yes
+
+  - name: Start salt-master 
+    service:
+      name: salt-master
+      state: started
+      enabled: yes
+
+  - name: Add minion key
+    shell: salt-key -A

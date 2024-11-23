@@ -1,0 +1,7 @@
+[all:vars]
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+
+[allhosts]
+salt-main ansible_host=192.168.56.101 ansible_ssh_user=vagrant ansible_ssh_pass=vagrant
+minion-blue ansible_host=192.168.56.102 ansible_ssh_user=vagrant ansible_ssh_pass=vagrant
+minion-green ansible_host=192.168.56.103 ansible_ssh_user=vagrant ansible_ssh_pass=vagrant
