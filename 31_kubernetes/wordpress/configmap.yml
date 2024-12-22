@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: siteconfig
+data:
+  000-default.conf: |
+    <VirtualHost *:80>
+            ServerAdmin webmaster@localhost
+            DocumentRoot /var/www/site
+            ErrorLog ${APACHE_LOG_DIR}/error.log
+            CustomLog ${APACHE_LOG_DIR}/access.log combined
+    </VirtualHost>
