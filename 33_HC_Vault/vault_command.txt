@@ -1,0 +1,16 @@
+vault secrets enable database
+
+vault write database/config/postgresql \
+ plugin_name=postgresql-database-plugin \
+ allowed_roles="postgresql-rotate,postgresql-create" \
+ connection_url=postgresql://{{username}}:{{password}}@192.168.100.205:5432/postgres?sslmode=disable \
+ username="postgres" \
+ password="password"
+
+vault write database/static-roles/postgresql-rotate \
+ db_name=postgresql \
+ rotation_statements="ALTER USER \"{{name}}\" WITH PASSWORD '{{password}}';" \
+ username="vaultuser" \
+ rotation_period=720h
+
+vault read database/static-creds/postgresql-rotate
