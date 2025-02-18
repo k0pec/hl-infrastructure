@@ -1,0 +1,15 @@
+[sources.ceph_input_vector]
+type = "file"
+include = [ "/var/log/ceph/*.log" ]
+start_at_beginning = false
+fingerprinting.strategy = "device_and_inode"
+
+
+[sinks.ceph_output_loki]
+type = "loki"
+inputs = ["ceph_input_vector"]
+healthcheck = true
+compression = "none"
+encoding.codec = "raw_message"
+labels.ceph = "ceph-srv2-%Y-%m-%d"
+endpoint = "http://192.168.152.160:3100"
