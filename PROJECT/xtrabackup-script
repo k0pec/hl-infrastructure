@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Удаляем данные в каталоге бекапа
+rm -rf /mysql/backup
+
+# Cоздаём бекап
+xtrabackup --user=root  --password=qwerty --backup  --target-dir=/mysql/backup
+
+# Выполняем подготовку бекапа для развёртывания
+xtrabackup --prepare --target-dir=/mysql/backup
+
+# Создаём архив
+tar -zcvf /dumps/xtrabackup-all-dbs-"$(date +%F-%H:%M:%S)".gz /mysql/backup
