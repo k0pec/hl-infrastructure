@@ -1,0 +1,15 @@
+[Unit]
+Description=pmm-server
+Wants=network-online.target
+After=network-online.target
+After=nss-user-lookup.target nss-lookup.target
+After=time-sync.target
+[Service]
+User=root
+Group=root
+Restart=on-failure
+RestartSec=20
+ExecStart=/bin/bash -c "/usr/bin/podman stop -a && /usr/bin/podman run --volume=pmm-server_data:/srv --rm --replace=true --name pmm-server  --net pmm-network --cap-add=net_admin,net_raw --userns=keep-id:uid=1000,gid=1000 -p 443:8443/tcp --ulimit=host docker.io/percona/pmm-server:3"
+ExecStop=/usr/bin/podman stop -t 10 pmm-server
+[Install]
+WantedBy=default.target

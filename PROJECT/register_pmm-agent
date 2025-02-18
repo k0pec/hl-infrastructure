@@ -1,0 +1,2 @@
+#!/bin/bash
+pmm-admin config --server-insecure-tls --server-url=https://admin:qwerty@192.168.152.160:443
